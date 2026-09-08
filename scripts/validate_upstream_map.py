@@ -17,6 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OWNERS = {'Core', 'Core.Packs', 'Cloud.Platform', 'Cloud.Games',
           'Cloud.Community', 'Cloud.Marketplace'}
 SHA = re.compile(r'[0-9a-f]{40}')
+REPOSITORY_ALIASES = {
+    'core': ('HappyMiha/AgentFactory', 'HappyMiha/Lokvetia-Core'),
+    'cloud': ('HappyMiha/AgentFactory-Cloud', 'HappyMiha/Lokiravia'),
+}
 JOURNEYS = {
     'AF-GC-026': ('Godot', {'AF-CLD-020', 'AF-CLD-034'}),
     'AF-GC-031': ('local/hybrid', {'AF-CLD-063', 'AF-CLD-065'}),
@@ -83,12 +87,12 @@ def validate(data, cloud_manifest, core_repo=None):
     require(data.get('purpose') == 'planning-only', 'Map must remain planning-only')
     baseline = data.get('baseline')
     require(isinstance(baseline, dict), 'Missing baseline')
-    for name, repository, manifest in [
-        ('core', 'HappyMiha/AgentFactory', 'examples/game-creator-backlog.json'),
-        ('cloud', 'HappyMiha/AgentFactory-Cloud', 'examples/agentfactory-cloud-backlog.json')]:
+    for name, manifest in [
+        ('core', 'examples/game-creator-backlog.json'),
+        ('cloud', 'examples/agentfactory-cloud-backlog.json')]:
         source = baseline.get(name)
         require(isinstance(source, dict), f'Missing {name} baseline')
-        require(source.get('repository') == repository and source.get('manifest') == manifest,
+        require(source.get('repository') in REPOSITORY_ALIASES[name] and source.get('manifest') == manifest,
                 f'Unexpected {name} baseline source')
         require(isinstance(source.get('commit'), str) and SHA.fullmatch(source['commit']),
                 f'{name} baseline must pin a full commit')
@@ -111,7 +115,7 @@ def validate(data, cloud_manifest, core_repo=None):
                         f'{ident}: unsafe source path')
         elif item.get('kind') == 'merged-engineering-review':
             require(isinstance(item.get('url'), str) and re.fullmatch(
-                r'https://github\.com/HappyMiha/AgentFactory/pull/[1-9][0-9]*(?:#[a-z0-9-]+)?', item['url']),
+                r'https://github\.com/HappyMiha/(?:AgentFactory|Lokvetia-Core)/pull/[1-9][0-9]*(?:#[a-z0-9-]+)?', item['url']),
                 f'{ident}: invalid engineering evidence URL')
         else:
             raise MapError(f'{ident}: unsupported evidence type')

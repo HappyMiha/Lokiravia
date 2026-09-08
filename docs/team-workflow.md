@@ -2,6 +2,12 @@
 
 The team uses the same two repositories and one shared task register.
 
+**Lokvetia Core** (formerly AgentFactory) owns the shared engine and register.
+**Lokiravia, by Lokvetia** (formerly AgentFactory Cloud) owns the creator product.
+The `core` and `cloud` scope keys, AF task IDs and AgentFactoryBus technical
+name are retained for compatibility. Existing checkouts can keep their paths;
+the clone commands below use the canonical repository names after the rename.
+
 | Worker ID | Computer | Starting responsibility |
 | --- | --- | --- |
 | `HappyDucky02` | This workstation | Coordination and integration; then a ready Core or Cloud task |
@@ -12,7 +18,7 @@ These are worker names, not separate GitHub identities. All three may use the sa
 
 ## One place to see current work
 
-The live register is [`team-state.json` on Core's `team-state` branch](https://github.com/HappyMiha/AgentFactory/blob/team-state/team-state.json). It covers both Core and Cloud. Keep this branch separate from application `main`; never merge its contents into application branches.
+The live register is [`team-state.json` on Core's `team-state` branch](https://github.com/HappyMiha/Lokvetia-Core/blob/team-state/team-state.json). It covers both Core and Cloud. Keep this branch separate from application `main`; never merge its contents into application branches.
 
 The register records task ID, dependencies, worker, branch, declared paths, shared resources, state, PR, and an event history. It contains coordination metadata only. Do not put private source, product briefs, personal data, server addresses, credentials, or detailed incident reports in the public register. Put detailed evidence in the relevant repository's PR.
 
@@ -27,8 +33,8 @@ Install Git, Python 3.11 or newer, and GitHub CLI, then sign in with `gh auth lo
 On Ubuntu, use `python3` below. On Windows, use `python` with the chosen Python environment.
 
 ```bash
-git clone https://github.com/HappyMiha/AgentFactory.git
-cd AgentFactory
+git clone https://github.com/HappyMiha/Lokvetia-Core.git
+cd Lokvetia-Core
 python scripts/team.py configure --worker HappySnowman
 python scripts/team.py status
 python scripts/team.py ready
@@ -37,8 +43,8 @@ python scripts/team.py ready
 Use `HappyHahahaker` on the other Windows PC and `HappyDucky02` on this workstation. Repeat configuration in the Cloud clone:
 
 ```bash
-git clone https://github.com/HappyMiha/AgentFactory-Cloud.git
-cd AgentFactory-Cloud
+git clone https://github.com/HappyMiha/Lokiravia.git
+cd Lokiravia
 python scripts/team.py configure --worker HappySnowman
 ```
 
@@ -96,7 +102,7 @@ Never use `--force`, `--force-with-lease`, `--no-verify`, or a changed hooks pat
 Open a pull request to `main` in the repository that owns the change. Include the qualified task ID, worker, scopes, dependencies, what changed, tests, known failures, and any downstream impact. PR creation is separate from authorizing contact through email or chat.
 
 ```bash
-python scripts/team.py review core:AF-GC-003 --worker HappyHahahaker --pr https://github.com/HappyMiha/AgentFactory/pull/NUMBER
+python scripts/team.py review core:AF-GC-003 --worker HappyHahahaker --pr https://github.com/HappyMiha/Lokvetia-Core/pull/NUMBER
 ```
 
 Review keeps the task and scopes reserved. A pushed branch is not a completed dependency. If the PR changes, rerun checks and update the review record for the new head commit.
@@ -106,7 +112,7 @@ HappyDucky02 coordinates merges initially. Another worker reviews the diff and r
 Before merging, fetch the latest `main`, update and retest the branch when needed, check live task ownership and prerequisite completion, and inspect CI for the exact head. Merge prerequisite PRs first. For changes in both repositories, merge and record the upstream Core result, then update and test the Cloud consumer against that commit. Do not mark both tasks done merely because one PR merged.
 
 ```bash
-python scripts/team.py complete core:AF-GC-003 --worker HappyHahahaker --pr https://github.com/HappyMiha/AgentFactory/pull/NUMBER
+python scripts/team.py complete core:AF-GC-003 --worker HappyHahahaker --pr https://github.com/HappyMiha/Lokvetia-Core/pull/NUMBER
 ```
 
 Completion requires the recorded PR to be merged into the right `main` with the expected branch and reviewed head. It releases the claim. The task register tracks merged engineering work; product acceptance still needs the evidence and owner decision required by the original backlog. A merged planning document does not certify a game, deployment, or release gate.

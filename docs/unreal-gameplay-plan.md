@@ -1,12 +1,12 @@
-# AgentFactory: build an Unreal game with AI, then run agents inside it
+# Lokiravia: build an Unreal game with AI, then run agents inside it
 
 Planning revision: 6 September 2026. This is the owner-requested Unreal and Gameplay AI direction, with source findings and planned qualification work. It is not evidence of an executed Unreal session, game package or NPC runtime.
 
 ## Target outcome
 
-A creator describes a game. AgentFactory creates its project, opens the real Unreal Editor, assigns coding and level work to an AI team, tests the result, and produces a Windows package. That package contains NPCs and world systems that can observe, plan, act, and remember during play.
+A creator describes a game. Lokiravia creates its project, opens the real Unreal Editor, assigns coding and level work to an AI team, tests the result, and produces a Windows package. That package contains NPCs and world systems that can observe, plan, act, and remember during play.
 
-The development agents and the game's agents have separate lifetimes, permissions, budgets, and acceptance tests. Closing AgentFactory must not break the shipped game. A game that needs a local model or an online service must declare that dependency honestly.
+The development agents and the game's agents have separate lifetimes, permissions, budgets, and acceptance tests. Closing Lokiravia must not break the shipped game. A game that needs a local model or an online service must declare that dependency honestly.
 
 ## Findings and reuse decision
 
@@ -22,7 +22,7 @@ The inspected build file sets `bUnrealMcpAllowShipping` to false and stages a se
 
 Epic's own UE 5.8 **Unreal MCP** is a second candidate. It is Experimental, runs calls serially on the game thread, and has runtime modules that can host a server in cooked/Shipping builds. Its Toolset Registry adapter is editor-only; a packaged game must explicitly register its tools. The documented server has no authentication layer and is intended for local use. This makes it a comparison candidate, not an automatically approved production endpoint. [Epic documentation](https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor).
 
-**Proposed decision:** evaluate IvanMurzak's stack first for the complete editor workflow, and compare Epic's native stack on the same pinned UE version. Reuse working editor operations through an AgentFactory adapter. Select the runtime implementation separately after the packaged-game test. Do not build another broad Unreal editor-control layer before this comparison.
+**Proposed decision:** evaluate IvanMurzak's stack first for the complete editor workflow, and compare Epic's native stack on the same pinned UE version. Reuse working editor operations through a Lokvetia Core adapter. Select the runtime implementation separately after the packaged-game test. Do not build another broad Unreal editor-control layer before this comparison.
 
 The source recheck on 6 September 2026 also confirms a practical discovery requirement: Epic's MCP plugin and its toolsets are separate, and default tool search exposes discovery tools before individual operations. The adapter experiment must retain the discovered toolsets/schemas and exercise the actual actor, level, Blueprint and test operations it needs; an enabled plugin or successful connection is not coverage evidence. [Epic setup and tool discovery](https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor).
 
@@ -30,7 +30,7 @@ The source recheck on 6 September 2026 also confirms a practical discovery requi
 
 ```mermaid
 flowchart TD
-    Brief[Creator's game brief] --> Team[AgentFactory development team]
+    Brief[Creator's game brief] --> Team[Lokvetia Core development team]
     Team --> Guard[Task ownership, approved tools, budget and evidence]
     Guard --> Adapter[Unreal editor adapter]
     Adapter --> MCP[Selected MCP backend]
@@ -46,7 +46,7 @@ flowchart TD
     World --> Runtime
 ```
 
-This is an AgentFactory proposal. Planning and code preparation may run concurrently, but one editor session has one serialized mutation queue. Two level agents must not write the same map or Blueprint concurrently. Save checkpoints and collect actual tool errors; a model's success message is not build evidence.
+This is a Lokiravia proposal. Planning and code preparation may run concurrently, but one editor session has one serialized mutation queue. Two level agents must not write the same map or Blueprint concurrently. Save checkpoints and collect actual tool errors; a model's success message is not build evidence.
 
 For gameplay, expose narrow actions such as `move_to`, `speak`, `accept_job`, and `schedule_world_event`. A response is a proposal containing actor, action, parameters, world revision, expiry, and request ID. The game checks authority, legal state transitions, bounds, and duplicate requests before applying it. Never offer development tools, arbitrary reflection, filesystem writes, or shell commands to an NPC.
 
@@ -58,7 +58,7 @@ Cloud inference uses a game-service identity and per-player/session limits; prov
 
 Unreal packaging comprises build, cook, stage, and package operations. A Windows release normally contains an executable and supporting data files; success does not mean a single self-contained file. PIE success and an editor C++ compile are earlier checks, not release acceptance. [Epic packaging documentation](https://dev.epicgames.com/documentation/unreal-engine/packaging-your-project).
 
-The proposed release gate requires the exact packaged artifact to start and finish its reference scenario on a Windows machine without Unreal Editor, AgentFactory, developer credentials, or undeclared tools. Check Development and Shipping separately, collect build logs, artifact hashes, crashes, and gameplay traces, and verify that only intended runtime components ship. Signing, redistribution notices, and store publication are separate release work.
+The proposed release gate requires the exact packaged artifact to start and finish its reference scenario on a Windows machine without Unreal Editor, Lokiravia or Lokvetia Core, developer credentials, or undeclared tools. Check Development and Shipping separately, collect build logs, artifact hashes, crashes, and gameplay traces, and verify that only intended runtime components ship. Signing, redistribution notices, and store publication are separate release work.
 
 ## First reference game and proposed work sequence
 
@@ -78,7 +78,7 @@ The rows below are proposed research/delivery slices, not newly claimed catalogu
 
 Initial proposed measurements: a 30-minute play session, ten save/load cycles, a five-minute model outage, and twenty sequential agent decisions. Record actual p50/p95 decision latency, model calls/tokens, memory, package size, startup/build time, frame-time change, rejected actions, and recovery outcomes. Agree final thresholds against the chosen hardware before advertising support. These numbers define a proposed experiment, not results.
 
-For the first complete vertical slice, keep one evidence bundle containing the brief and declared starter assets, agent/tool trace with manual interventions, accepted source revision, Development and Shipping build receipts, exact player-package hashes, objective-completion trace, and NPC decision/save/load/outage results. Finish by asking for one small gameplay change and producing a second accepted package without losing the original playable build. Until that loop passes, report the accepted component or partial scenario rather than the complete AI game-factory promise. The source findings above describe published capabilities. The evidence bundle must separately record what was actually exercised in AgentFactory.
+For the first complete vertical slice, keep one evidence bundle containing the brief and declared starter assets, agent/tool trace with manual interventions, accepted source revision, Development and Shipping build receipts, exact player-package hashes, objective-completion trace, and NPC decision/save/load/outage results. Finish by asking for one small gameplay change and producing a second accepted package without losing the original playable build. Until that loop passes, report the accepted component or partial scenario rather than the complete AI game-factory promise. The source findings above describe published capabilities. The evidence bundle must separately record what was actually exercised in Lokiravia.
 
 ## Backlog and repository placement
 
@@ -121,7 +121,7 @@ The three development PCs can contribute different test evidence after their act
 
 ## Contract and experiment refinements
 
-These are proposed acceptance requirements from a second document review. They are not capabilities already verified in AgentFactory or the candidate plugins.
+These are proposed acceptance requirements from a second document review. They are not capabilities already verified in Lokiravia or the candidate plugins.
 
 1. **Recover editor ownership safely.** Reuse Core worker ownership to bind each editor session to a project, workspace, lease and fencing token. Give commands stable IDs. After a timeout or coordinator restart, inspect whether an asset was created before retrying it. An expired worker must not continue changing the project after ownership transfers. A queue inside one process does not coordinate three computers by itself.
 2. **Measure three kinds of repeatability separately.** Repeat generation from a brief and record variation and manual help. Rebuild an accepted source revision with locked assets and dependencies. Replay a player scenario from a known save. Bind each package receipt to source, assets, engine, compiler, plugins, build configuration and output hashes. Do not require identical prompts to produce identical games, or claim byte-identical builds without testing that property.

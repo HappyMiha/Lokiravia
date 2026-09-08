@@ -1,0 +1,114 @@
+/* Lokiravia by Lokvetia: warm paper, a violet path, and an amber spark.
+   The shared identity adds no scripts, fonts, tracking, or remote assets. */
+.brand-cloud {
+  --brand-ink: #332746;
+  --brand-muted: #6a6173;
+  --brand-accent: #62418e;
+  --brand-accent-deep: #513880;
+  --brand-paper: #faf7f1;
+  --brand-line: #e0d8e6;
+  --brand-focus: #996115;
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  color: var(--brand-ink);
+  background: var(--brand-paper);
+  -webkit-font-smoothing: antialiased;
+}
+.brand-cloud .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  min-width: 0;
+  color: var(--brand-ink);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 750;
+  letter-spacing: -.04em;
+  line-height: 1.15;
+}
+.brand-cloud .brand-symbol { display: block; width: 42px; height: 42px; flex: 0 0 42px; }
+.brand-cloud .brand .brand-name { display: block; margin: 0; color: var(--brand-ink); font-weight: 750; }
+.brand-cloud .brand .brand-name small {
+  display: block;
+  margin-top: .3rem;
+  color: var(--brand-muted);
+  font-size: .64rem;
+  font-weight: 500;
+  letter-spacing: .07em;
+}
+.brand-cloud h1 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: clamp(2.15rem, 4.2vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.13;
+  color: var(--brand-ink);
+  text-wrap: balance;
+}
+.brand-cloud h2, .brand-cloud h3 { color: var(--brand-ink); }
+.brand-cloud p { color: var(--brand-muted); }
+.brand-cloud a { color: var(--brand-accent); text-underline-offset: .2em; }
+.brand-cloud .eyebrow { color: var(--brand-accent); font-size: .67rem; font-weight: 750; letter-spacing: .14em; }
+.brand-cloud :is(a, button, input, select, textarea, summary):focus-visible { outline: 3px solid var(--brand-focus); outline-offset: 3px; }
+.brand-cloud input:is([type="checkbox"], [type="radio"]) {
+  display: inline-block;
+  width: auto;
+  margin: .25em .55em .25em 0;
+  accent-color: var(--brand-accent);
+  vertical-align: middle;
+}
+.brand-cloud button { transition: background-color 150ms ease, border-color 150ms ease; }
+.brand-cloud .brand-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .65rem 1.2rem;
+  border-top: 1px solid var(--brand-line);
+  padding-top: 1.25rem;
+  margin-top: 3rem;
+  color: var(--brand-muted);
+  font-size: .75rem;
+  line-height: 1.5;
+}
+.brand-cloud:not(.brand-prototype) > header { background: #fffcf7; border-color: var(--brand-line); padding: 1.25rem 5vw; }
+.brand-cloud:not(.brand-prototype) .heading { padding: .75rem 0; }
+.brand-cloud:not(.brand-prototype) .heading h1 { max-width: 850px; }
+.brand-cloud:not(.brand-prototype) .heading p:not(.eyebrow) { max-width: 700px; }
+.brand-cloud:not(.brand-prototype) .pill { background: #f0eaf7; color: #5a4275; }
+.brand-cloud:not(.brand-prototype) #content { background: #fffdf9; border-color: var(--brand-line); box-shadow: 0 8px 30px #51388004; }
+.brand-cloud:not(.brand-prototype) button { background: var(--brand-accent); border-color: var(--brand-accent); color: #fff; }
+.brand-cloud:not(.brand-prototype) button:not(:disabled):hover { background: var(--brand-accent-deep); }
+.brand-cloud:not(.brand-prototype) button.quiet { background: transparent; color: var(--brand-accent); border-color: #b9a8c9; }
+.brand-cloud:not(.brand-prototype) button.quiet:not(:disabled):hover { background: #f0eaf7; }
+.brand-cloud:not(.brand-prototype) nav button { background: #eee7f2; color: var(--brand-ink); border-color: transparent; }
+.brand-cloud:not(.brand-prototype) nav button:not(:disabled):hover { color: #fff; }
+.brand-cloud:not(.brand-prototype) label { color: var(--brand-ink); }
+.brand-cloud:not(.brand-prototype) :is(textarea, input, select) { color: var(--brand-ink); border-color: #bcafc7; background: #fff; }
+.brand-cloud:not(.brand-prototype) summary { color: var(--brand-accent); }
+.brand-cloud:not(.brand-prototype) details { border-color: var(--brand-line); }
+.brand-cloud:not(.brand-prototype) pre { background: #f0eaf4; color: #4b3a5d; }
+.brand-cloud:not(.brand-prototype) .question { background: #f3eef7; }
+.brand-cloud:not(.brand-prototype) .options button { background: #fff; color: var(--brand-accent); border-color: #b9a8c9; }
+.brand-cloud:not(.brand-prototype) .options button:not(:disabled):hover { background: #eee5f6; }
+.brand-cloud:not(.brand-prototype) #status { background: #fff0d7; color: #75501c; }
+.brand-cloud:not(.brand-prototype) dialog { background: #fffdf9; border-color: var(--brand-line); color: var(--brand-ink); }
+.brand-cloud:not(.brand-prototype) dialog::backdrop { background: #21142c99; }
+.brand-cloud:not(.brand-prototype) footer { color: var(--brand-muted); }
+.brand-cloud.page-brief #login { max-width: 560px; margin: 3rem auto; padding: 2rem; border: 1px solid var(--brand-line); border-radius: 18px; background: #fffdf9; }
+.brand-cloud.page-brief #login h1 { font-size: clamp(2rem, 4vw, 2.6rem); }
+.brand-cloud:is(.page-connections, .page-game-team) main { max-width: 960px; }
+.brand-cloud:is(.page-connections, .page-game-team) main > h1 { margin-top: 1.5rem; }
+.brand-cloud.page-game-team #roles > article { border: 1px solid var(--brand-line); padding: 1.25rem; border-radius: 12px; margin: 1rem 0; background: #fffdf9; }
+@media (max-width: 720px) {
+  .brand-cloud:not(.brand-prototype) > header { padding: 1rem; flex-wrap: wrap; gap: .8rem; }
+  .brand-cloud .brand { font-size: 1.2rem; }
+  .brand-cloud .brand-symbol { width: 38px; height: 38px; flex-basis: 38px; }
+  .brand-cloud:not(.brand-prototype) .heading { flex-wrap: wrap; }
+  .brand-cloud:not(.brand-prototype) .heading > button { width: 100%; }
+  .brand-cloud:not(.brand-prototype) .actions { flex-wrap: wrap; }
+  .brand-cloud.page-brief #login { margin: 1rem 0; padding: 1.5rem; }
+  .brand-cloud .brand-footer { margin-top: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-cloud *, .brand-cloud *::before, .brand-cloud *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

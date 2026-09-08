@@ -1,6 +1,15 @@
 # Planning sources and decisions
 
-Revision date: 2026-09-05. This repository contains descriptions, a roadmap, and a proposed backlog. It contains no Cloud application, deployment configuration, or automated task execution.
+Historical planning revision: 2026-09-05. At that revision this repository
+contained descriptions, a roadmap, and a proposed backlog, with no Cloud
+application, deployment configuration, or automated task execution. See the
+[README](../README.md) for the current implementation state.
+
+Brand update, 2026-09-08: AgentFactory Cloud is now **Lokiravia, by Lokvetia**;
+AgentFactory Core is now **Lokvetia Core**. The owner has purchased
+`lokiravia.com` and `lokvetia.com`. Original package names and the decisions
+below retain their historical wording. This rebrand does not change the
+original archive, task IDs, requirements or acceptance gates.
 
 ## Source package
 

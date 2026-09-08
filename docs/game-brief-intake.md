@@ -1,4 +1,4 @@
-# Turn an idea into an editable game brief
+# Lokiravia: turn an idea into an editable game brief
 
 Task: `cloud:AF-CLD-007`. This is the first working local creator intake. It
 stores real data through Core and provides a browser editor. It does not yet
@@ -33,14 +33,24 @@ install Unreal, Godot, Ollama, or any model.
 On Windows, after activating the environment:
 
 ```powershell
-agentfactory-brief --data "$env:LOCALAPPDATA/AgentFactory/briefs"
+lokiravia --data "$env:LOCALAPPDATA/AgentFactory/briefs"
 ```
 
 On Ubuntu:
 
 ```bash
-agentfactory-brief --data "$HOME/.local/share/agentfactory/briefs"
+lokiravia --data "$HOME/.local/share/agentfactory/briefs"
 ```
+
+`lokiravia` is the preferred command. The existing `agentfactory-brief` command
+remains an alias, with the same options and data. Existing data directories in
+the examples retain their original names so returning creators open the same
+briefs; do not create a new directory when continuing an existing workspace.
+A new installation may choose any private directory with `--data`.
+
+The Python distribution (`agentfactory-cloud`), import namespace
+(`agentfactory_cloud`), Core environment variables and the pinned dependency
+remain compatible. See the [rebrand compatibility guide](../README.md#compatibility).
 
 Open `http://127.0.0.1:8767`. The server listens only on the local loopback
 address. Use one server process and a private data directory outside Git.
@@ -68,13 +78,13 @@ Windows:
 
 ```powershell
 $env:OLLAMA_HOST = 'http://127.0.0.1:11434'
-agentfactory-brief --data "$env:LOCALAPPDATA/AgentFactory/briefs" --enable-local-ai --model qwen2.5-coder:7b
+lokiravia --data "$env:LOCALAPPDATA/AgentFactory/briefs" --enable-local-ai --model qwen2.5-coder:7b
 ```
 
 Ubuntu:
 
 ```bash
-OLLAMA_HOST=http://127.0.0.1:11434 agentfactory-brief \
+OLLAMA_HOST=http://127.0.0.1:11434 lokiravia \
   --data "$HOME/.local/share/agentfactory/briefs" \
   --enable-local-ai --model qwen2.5-coder:7b
 ```

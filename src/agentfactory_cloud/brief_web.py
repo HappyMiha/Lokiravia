@@ -1,4 +1,7 @@
-"""Loopback creator intake, using Core local access; not a hosted tenant service."""
+"""Lokiravia by Lokvetia: a local game idea and planning workspace.
+
+Uses Lokvetia Core local access. Hosted game creation is still planned.
+"""
 from __future__ import annotations
 
 import argparse
@@ -81,7 +84,8 @@ def create_app(folder: Path, *, model=None):
     store = BriefStore(folder)
     plans = ScopePlans(store)
     access = LocalAccess()
-    app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
+    app = FastAPI(title='Lokiravia', description=__doc__,
+                  docs_url=None, redoc_url=None, openapi_url=None)
     app.state.brief_store = store
     app.add_middleware(BodyLimit)
     app.add_middleware(LocalHTTPBoundary, access=access)
@@ -194,7 +198,7 @@ def create_app(folder: Path, *, model=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(prog='lokiravia', description=__doc__)
     parser.add_argument('--data', type=Path, required=True, help='Private data directory outside the source checkout')
     parser.add_argument('--port', type=int, default=8767)
     parser.add_argument('--enable-local-ai', action='store_true', help='Explicitly permit bounded local inference on button press')
