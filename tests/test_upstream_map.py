@@ -24,6 +24,48 @@ class UpstreamMapTests(unittest.TestCase):
     def test_complete_map_passes_without_claiming_product_acceptance(self):
         self.assertIn('67 Cloud capabilities, 42 upstream tasks; no product gate accepted', self.check())
 
+    def test_repository_rename_aliases_preserve_pinned_planning_evidence(self):
+        pins = {name: source['commit'] for name, source in self.data['baseline'].items()
+                if name in {'core', 'cloud'}}
+        reviews = [item for item in self.data['evidence_catalog'] if item['kind'] == 'merged-engineering-review']
+        original_urls = [item['url'] for item in reviews]
+        for core in ('HappyMiha/AgentFactory', 'HappyMiha/Lokvetia-Core'):
+            for cloud in ('HappyMiha/AgentFactory-Cloud', 'HappyMiha/Lokiravia'):
+                with self.subTest(core=core, cloud=cloud):
+                    self.data['baseline']['core']['repository'] = core
+                    self.data['baseline']['cloud']['repository'] = cloud
+                    for item, url in zip(reviews, original_urls):
+                        item['url'] = url.replace('HappyMiha/AgentFactory/', core + '/').replace('HappyMiha/Lokvetia-Core/', core + '/')
+                    self.assertIn('no product gate accepted', self.check())
+                    self.assertEqual({name: self.data['baseline'][name]['commit'] for name in pins}, pins)
+
+    def test_repository_rename_does_not_accept_foreign_baselines(self):
+        for repo, wrong in (
+            ('core', 'HappyMiha/Lokiravia'), ('cloud', 'HappyMiha/Lokvetia-Core'),
+            ('core', 'AnotherOwner/Lokvetia-Core'), ('cloud', 'AnotherOwner/Lokiravia'),
+            ('core', 'HappyMiha/Lokvetia-Core-copy'), ('cloud', 'HappyMiha/Lokiravia-copy'),
+        ):
+            with self.subTest(repo=repo, wrong=wrong):
+                original = self.data['baseline'][repo]['repository']
+                self.data['baseline'][repo]['repository'] = wrong
+                with self.assertRaisesRegex(validator.MapError, 'baseline source'):
+                    self.check()
+                self.data['baseline'][repo]['repository'] = original
+
+    def test_repository_rename_keeps_engineering_review_url_boundaries(self):
+        review = next(item for item in self.data['evidence_catalog'] if item['kind'] == 'merged-engineering-review')
+        for url in (
+            'https://github.com/HappyMiha/Lokiravia/pull/3',
+            'https://github.com/AnotherOwner/Lokvetia-Core/pull/3',
+            'https://github.com.example.com/HappyMiha/Lokvetia-Core/pull/3',
+            'https://github.com/HappyMiha/Lokvetia-Core/pull/3?different=yes',
+            'https://github.com/HappyMiha/Lokvetia-Core/pull/0',
+        ):
+            with self.subTest(url=url):
+                review['url'] = url
+                with self.assertRaisesRegex(validator.MapError, 'engineering evidence URL'):
+                    self.check()
+
     def test_missing_or_duplicate_task_is_rejected(self):
         for field in ['capabilities', 'upstream_tasks']:
             with self.subTest(field=field):

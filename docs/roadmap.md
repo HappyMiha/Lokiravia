@@ -1,6 +1,9 @@
-# Roadmap
+# Lokiravia roadmap
 
 **Date:** 2026-09-06
+
+**Brand revision:** 2026-09-08. Lokiravia is the creator product by Lokvetia,
+powered by Lokvetia Core. Core and Cloud retain their architectural meanings.
 
 **Status:** Product roadmap. The live shared task register records current engineering work; release gates below require their own acceptance evidence.
 
@@ -81,7 +84,7 @@ M1 uses an adult/internal cohort unless the age/guardian and privacy path has al
 3. A real qualified coding worker changes source.
 4. Godot imports the project; required validators and independent review pass.
 5. Browser Play works with the stated controls.
-6. The Windows package runs and the source opens outside AgentFactory.
+6. The Windows package runs and the source opens outside Lokiravia.
 7. Feedback identifies the build played; a verified v2 changes the requested behavior.
 8. v1 remains playable and can be restored with matching source/assets.
 9. Stop, reconnect, worker restart and a failed build preserve the last good version and do not duplicate an accepted action or charge.
@@ -106,7 +109,7 @@ Delivery areas:
 - **Operations:** AF-CLD-033 — redacted support information, observability, backup and tested restore.
 - **Acceptance:** AF-CLD-034.
 
-The owner-supplied architecture proposes PostgreSQL, object storage and Temporal. Select a versioned hosted profile and validate it; their names alone do not prove readiness. The [Temporal commercial-use review](https://github.com/HappyMiha/AgentFactory/blob/main/docs/architecture/temporal-commercial-decision.md) recommends retaining the existing integration, qualifying operations under AF-CLD-025/033, and keeping the first gameplay runtime independent.
+The owner-supplied architecture proposes PostgreSQL, object storage and Temporal. Select a versioned hosted profile and validate it; their names alone do not prove readiness. The [Temporal commercial-use review](https://github.com/HappyMiha/Lokvetia-Core/blob/main/docs/architecture/temporal-commercial-decision.md) recommends retaining the existing integration, qualifying operations under AF-CLD-025/033, and keeping the first gameplay runtime independent.
 
 Cloud controls must include tenant checks on source, jobs, previews and artifacts; a separate untrusted game origin; bounded upload/compute/network use; and quarantine before atomic artifact promotion. API/provider keys never enter games or downloadable output.
 

@@ -1,14 +1,19 @@
-# Product description
+# Lokiravia product description
 
 **Date:** 2026-09-06
+
+**Brand revision:** 2026-09-08. **Lokiravia, by Lokvetia** replaces the public
+name AgentFactory Cloud. The product domain is [lokiravia.com](https://lokiravia.com);
+[lokvetia.com](https://lokvetia.com) is the family brand domain. Domain ownership
+does not establish hosted product availability.
 
 **Status:** Product direction with early local editor and planning components. Hosted game creation and the Unreal path still need qualification. The live shared task register records engineering progress; this description states the intended product and its acceptance boundaries.
 
 ## 1. What we want to build
 
-AgentFactory Cloud will help people turn a game idea into a real game project. A creator will describe an idea, agree on a small first version, let an AI team build and test it, play the result, and ask for changes.
+Lokiravia will help people turn a game idea into a real game project. A creator will describe an idea, agree on a small first version, let an AI team build and test it, play the result, and ask for changes.
 
-The creator should receive the source project and supported game builds. A game should remain usable outside AgentFactory, subject to its engine, asset and other license terms.
+The creator should receive the source project and supported game builds. A game should remain usable outside Lokiravia, subject to its engine, asset and other license terms.
 
 **Product promise to prove:** Describe a game. Build a small playable version. Keep the source. Improve it through play and feedback.
 
@@ -30,8 +35,13 @@ The first full proof is one level, three NPCs and one objective, packaged for Wi
 
 | Project | Purpose | Repository |
 | --- | --- | --- |
-| AgentFactory Core | Open-source, provider-neutral agent orchestration and shared execution contracts | [HappyMiha/AgentFactory](https://github.com/HappyMiha/AgentFactory) |
-| AgentFactory Cloud | Commercial game creation, hosting, publishing and distribution product built on Core | HappyMiha/AgentFactory-Cloud |
+| Lokvetia Core | Open-source, provider-neutral agent orchestration and shared execution contracts | [HappyMiha/Lokvetia-Core](https://github.com/HappyMiha/Lokvetia-Core) |
+| Lokiravia | Commercial game creation, hosting, publishing and distribution product built on Core | [HappyMiha/Lokiravia](https://github.com/HappyMiha/Lokiravia) |
+
+The public family brand is **Lokvetia**. **Core** means Lokvetia Core; **Cloud**
+remains an internal architecture and task-scope shorthand for Lokiravia.
+Existing AF task IDs, Python names and stored data are compatibility identifiers,
+as described in the [migration guide](../README.md#compatibility).
 
 The existing Core repository uses Apache-2.0. It must remain useful without a Cloud account, game engine or Cloud billing system. Changes to its public contract should follow an explicit design and migration decision.
 
@@ -57,7 +67,7 @@ Cloud's commercial code and product operations remain separate from the public C
 | Server | The owner reports that a server is available; capacity, isolation and the full game pipeline are unverified here |
 | Hosted game creation, sandboxed builds and public game delivery | Planned; no production acceptance trace is supplied by this document |
 | Customers, play counts, revenue or retention | No verified figures are claimed |
-| agentfactory.ai | Candidate name/domain; ownership and availability are not established here |
+| lokiravia.com and lokvetia.com | Purchased by the owner; assigned to Lokiravia and the Lokvetia family brand respectively. Hosting and a deployed product still require verification |
 | Funding, credits and investment | Possible funding routes; no award or eligibility is assumed |
 
 Before claiming “we have deployed the game execution infrastructure,” collect a dated trace from a real source version through a build worker, sandbox checks and a working game URL. Record the software version, resource limits, failures and recovery. A server inventory or a successful unit test alone is insufficient.
@@ -164,7 +174,7 @@ For external stores, use the creator's own eligible developer account. Prepare t
 
 The supplied package proposes FastAPI-compatible resources, PostgreSQL, object storage and Temporal-based workflows. These are architecture candidates and integration targets, not a statement that a hosted Cloud stack has been deployed.
 
-Temporal is already integrated in Core. The [commercial-use review](https://github.com/HappyMiha/AgentFactory/blob/main/docs/architecture/temporal-commercial-decision.md) recommends retaining it for durable development and hosted jobs. Self-hosting and the paid managed service are separate operating choices; the first Unreal player package and its NPC loop do not require Temporal Server.
+Temporal is already integrated in Core. The [commercial-use review](https://github.com/HappyMiha/Lokvetia-Core/blob/main/docs/architecture/temporal-commercial-decision.md) recommends retaining it for durable development and hosted jobs. Self-hosting and the paid managed service are separate operating choices; the first Unreal player package and its NPC loop do not require Temporal Server.
 
 ```mermaid
 flowchart TD

@@ -1,5 +1,11 @@
 # Product backlog
 
+**Current brand: Lokiravia, by Lokvetia.** AgentFactory Cloud is the former
+product name; AgentFactory Core is now Lokvetia Core. The rows below retain
+the exact historical planning wording to match the pinned machine-readable
+backlog and upstream evidence. This is a naming transition, with the same
+task IDs and acceptance gates. See the [brand migration guide](brand/migration.md).
+
 Planning revision: **2026-09-06**. The **67 stable tasks and 7 epics** retain their product requirements. Proposed labels below describe the planning baseline; use the [live shared task register](https://github.com/HappyMiha/AgentFactory/blob/team-state/team-state.json) for current ownership and engineering completion. Release and deployment acceptance remain separate.
 
 The [JSON backlog](../examples/agentfactory-cloud-backlog.json) is the source of truth for IDs, dependencies, roles, sizes, and acceptance criteria. This document is its readable view. The [product description](product-description.md) explains the goal; the [roadmap](roadmap.md) explains the order; [planning notes](planning-notes.md) record changes from the supplied package.

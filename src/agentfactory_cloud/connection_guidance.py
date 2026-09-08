@@ -20,7 +20,8 @@ def guidance(*, actor, workspace, now=None):
             # No host approval is installed in this guidance-only consumer.
             gate = setup_decision(product['provider'], None, actor=actor, workspace=workspace, at=instant)
             products.append({'id':product['id'], 'title':product['title'],
-                'explanation':product['explanation'], 'flow':product['flow'],
+                # The pinned Core may predate its public rebrand. Only display copy changes.
+                'explanation':product['explanation'].replace('AgentFactory Core', 'Lokvetia Core').replace('AgentFactory', 'Lokvetia Core'), 'flow':product['flow'],
                 'sources':product['sources'], 'requirements':route['requirements'] if route else None,
                 'privacy':route['privacy'] if route else None,
                 'terms_sources':route['sources'] if route else [], 'setup_reason':gate['reason'],

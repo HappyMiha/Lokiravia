@@ -1,4 +1,8 @@
-# Core and Cloud responsibility contract
+# Lokvetia Core and Lokiravia responsibility contract
+
+Brand revision: **2026-09-08**. This contract keeps **Core** for Lokvetia Core
+and **Cloud** for Lokiravia, the game creation product by Lokvetia. Repository,
+task and implementation responsibilities remain the same.
 
 Task: **AF-CLD-001**. Status: **Proposed for integration and owner review**.
 
@@ -11,9 +15,9 @@ schemas and APIs; AF-CLD-003 owns the versioned upstream capability assessment.
 
 | Term | Meaning | Repository / decision owner |
 | --- | --- | --- |
-| Core | Provider-neutral orchestration, execution, evidence and artifact contracts | AgentFactory |
-| Pack | Optional roles, workflows, engine adapters or build targets using Core contracts | AgentFactory, outside the neutral scheduler |
-| Cloud | Hosted creator product and its product access policies | AgentFactory-Cloud |
+| Core | Provider-neutral orchestration, execution, evidence and artifact contracts | Lokvetia-Core |
+| Pack | Optional roles, workflows, engine adapters or build targets using Core contracts | Lokvetia-Core, outside the neutral scheduler |
+| Cloud | Hosted creator product and its product access policies | Lokiravia |
 | Games | Brief, game settings, play feedback and release experience | Cloud logical module |
 | Community | Public discovery, sharing, moderation and social presentation | Cloud logical module |
 | Marketplace | Listings, purchases, buyer entitlements and seller payouts | Cloud logical module |
@@ -26,7 +30,7 @@ schemas and APIs; AF-CLD-003 owns the versioned upstream capability assessment.
 | Listing | A versioned offer or public presentation, distinct from a build | Cloud Community or Marketplace as specified below |
 | Remix | New Cloud project derived from a permitted source version | Cloud permission decision using Core fork/checkpoint primitives |
 
-There are exactly two repositories: AgentFactory and AgentFactory-Cloud. Games,
+There are exactly two repositories: Lokvetia-Core and Lokiravia. Games,
 Community and Marketplace are modules, not additional repositories. Core retains
 its existing Apache-2.0 license. This contract does not select a Cloud license or
 assign rights in third-party or generated content.
@@ -80,7 +84,7 @@ The [Unreal use-case plan](unreal-gameplay-plan.md) keeps three responsibilities
 | Game-specific NPCs and world rules | Game pack | Validate every proposed action against game state; preserve save/load and deterministic fallback |
 | Creator acceptance and hosted gameplay service, if offered | Cloud | Qualified setup, player access, service budgets and the full build/play/change evidence |
 
-Development permissions do not grant a player session access to coding tools or provider master keys. Closing AgentFactory must not break the declared game profile. Temporal may recover development and hosted jobs; it does not own per-frame NPC behavior or become a required server inside the first Windows package.
+Development permissions do not grant a player session access to coding tools or provider master keys. Closing Lokiravia must not break the declared game profile. Temporal may recover development and hosted jobs; it does not own per-frame NPC behavior or become a required server inside the first Windows package.
 
 ## Required rights and provenance records
 
@@ -120,7 +124,7 @@ provenance or claim that an already delivered license was legally undone.
 
 A portable package includes source, supported builds, a provenance/component
 manifest and required license/attribution files. Exported games must run with their
-normal engine/target requirements without an AgentFactory runtime, login or store.
+normal engine/target requirements without a Lokvetia Core runtime, login or store.
 Cloud credentials, tenant identifiers and hosted-only services are not runtime
 dependencies. An optional hosted integration must be disclosed separately and
 cannot be represented as an independently portable game.
