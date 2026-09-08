@@ -10,6 +10,8 @@ A game creation platform by [Lokvetia](https://lokvetia.com), powered by
 [Product domain](https://lokiravia.com) · [Start locally](docs/game-brief-intake.md) ·
 [Product plan](docs/product-description.md) · [Roadmap](docs/roadmap.md)
 
+**Деплой і релізи:** [Deployment dashboard (в Lokvetia Core)](https://github.com/HappyMiha/Lokvetia-Core/blob/main/docs/deploy-dashboard.html) · [Автодеплой і rollback для Lokiravia](docs/autodeploy.md)
+
 Formerly **AgentFactory Cloud**. Lokiravia is the creator product; Lokvetia is
 the family brand, and Lokvetia Core is the independent orchestration engine.
 
