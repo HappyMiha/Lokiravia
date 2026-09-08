@@ -7,7 +7,7 @@ function lock(){ $('workspace').hidden=true; $('login').hidden=false; $('logout'
 async function api(path,body){
  const response=await fetch(path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined,cache:'no-store'});
  const data=await response.json();
- if(response.status===401){lock();throw new Error('Unlock the local workspace to continue.');}
+ if(response.status===401){$('login').hidden=false;throw new Error('Sign in with your shared account in a new tab, then retry. Your unsaved changes are kept here.');}
  if(!response.ok)throw new Error(typeof data.detail==='string'?data.detail:'The request could not be saved. Check the input and try again.');
  return data;
 }
@@ -59,7 +59,7 @@ $('suggest').onclick=()=>{
  confirmChange('Ask local AI to organize your idea?','This sends your saved idea to the installed local model. It suggests where your original sentences belong. Review every field before using the brief.',()=>run(async()=>{status('Local AI is sorting your original sentences. Your saved version stays available.');const brief=await api('/api/briefs/'+current.id+'/suggest',{expected_revision:current.revision,command_id:command()});show(brief);await list();status('AI suggestion saved. Check the fields against your original idea.');}));
 };
 $('view-version').onclick=()=>leaving(()=>run(async()=>{show(await api('/api/briefs/'+current.id+'?revision='+$('history').value));status('Earlier saved version. Load the latest version before saving new edits.');}));
-$('sign-in').onclick=()=>run(async()=>{await api('/auth/login',{token:$('token').value});$('token').value='';await list();if(location.hash)await load(location.hash.slice(1));status('Workspace unlocked.');});
+$('sign-in').onclick=()=>{window.open('/auth/sso/start','_blank','noopener');status('Complete sign-in in the new tab, then retry your action here.');};
 $('logout').onclick=()=>leaving(()=>run(async()=>{await api('/auth/logout',{});current=null;dirty=false;$('fields').replaceChildren();$('source').textContent='';$('ideas').replaceChildren();$('original').value='';lock();status('Workspace locked.');}));
 run(async()=>{await list();if(location.hash)await load(location.hash.slice(1));});
 

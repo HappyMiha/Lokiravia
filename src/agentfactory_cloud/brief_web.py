@@ -14,6 +14,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
 
 from agent_factory.http_auth import COOKIE, LocalAccess, LocalHTTPBoundary
+from agent_factory.sso import SsoAccess, access_for_workspace, install_routes as install_sso_routes
 from .game_briefs import BriefConflict, BriefStore, FIELDS, LocalBriefModel
 from .scope_plans import ScopePlans, LABELS, ENGINES, TARGETS
 from .game_team_web import install_routes as install_team_routes
@@ -83,12 +84,14 @@ class BodyLimit:
 def create_app(folder: Path, *, model=None):
     store = BriefStore(folder)
     plans = ScopePlans(store)
-    access = LocalAccess()
+    access = access_for_workspace(folder)
     app = FastAPI(title='Lokiravia', description=__doc__,
                   docs_url=None, redoc_url=None, openapi_url=None)
     app.state.brief_store = store
     app.add_middleware(BodyLimit)
     app.add_middleware(LocalHTTPBoundary, access=access)
+    app.state.local_access = access
+    install_sso_routes(app, access)
     static = Path(__file__).parent / 'static'
     app.mount('/static', StaticFiles(directory=static), name='static')
     install_team_routes(app, store)
@@ -110,8 +113,22 @@ def create_app(folder: Path, *, model=None):
         return JSONResponse({'detail': str(error)}, status_code=400)
 
     @app.get('/')
-    def index():
+    def index(request: Request):
+        if request.state.local_principal is None and isinstance(access, SsoAccess):
+            from starlette.responses import RedirectResponse
+            return RedirectResponse('/login', status_code=303)
         return FileResponse(static / 'brief.html')
+
+    @app.get('/login')
+    def login_page():
+        from starlette.responses import RedirectResponse
+        return RedirectResponse('/auth/sso/start' if isinstance(access, SsoAccess) else '/', status_code=303)
+
+    @app.get('/auth/session')
+    def session(request: Request):
+        principal = request.state.local_principal
+        return {'authenticated': principal is not None, 'actor': principal.actor if principal else None,
+                'authentication_required': bool(request.state.local_policy.token)}
 
     @app.get('/first-playable')
     def scope_page():
