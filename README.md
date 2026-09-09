@@ -4,6 +4,8 @@
 
 **Your idea. Your game world.**
 
+**Концепція й архітектура:** [Живий світ, самовдосконалення Core, спільний портфель із 65 задач і план доказів](docs/evolution/README.md) — проєктна документація, не заява про готову реалізацію.
+
 A game creation platform by [Lokvetia](https://lokvetia.com), powered by
 [Lokvetia Core](https://github.com/HappyMiha/Lokvetia-Core).
 
