@@ -14,7 +14,7 @@ also validate ownership and rights of the supplied external origin and reference
 The context is not an authentication token. PostgreSQL RLS independently rejects
 missing or foreign tenant filters; the application service and database
 administrator remain trusted. Bucket credentials never go to creators, manifests,
-download URLs, logs or the task register.
+download URLs, logs or public development records.
 
 ## Qualified component profile
 

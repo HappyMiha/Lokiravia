@@ -16,7 +16,7 @@ The intended design has these paths:
 Do not infer age from a name, photo, writing style or account appearance. Collect
 only the minimum eligibility result required by the approved process. Exact birth
 date, government identity documents, school, location and contact information do
-not belong in prompts, game briefs, public fixtures or the shared task registry.
+not belong in prompts, game briefs, public fixtures or public development records.
 The preview selector is not age verification and its value is not persisted.
 
 ## Approval record required before recruitment

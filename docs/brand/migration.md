@@ -15,12 +15,11 @@ Use Lokiravia in the app, documentation, API identity and product descriptions. 
 | Core dependency | Existing `agent-factory-orchestrator` distribution and pinned commit remain stable |
 | State/configuration | Existing database paths, environment variables, authentication, browser storage and credential identifiers remain unchanged |
 | Planning/evidence | `cloud`, AF-CLD/AF-GC IDs, backlog filenames, contract schemas and historical source evidence remain unchanged |
-| Task coordination | Existing claim owners, branches, tokens and PR history remain authoritative |
-| Old repository URLs | Redirect after GitHub rename; updated tooling recognizes old and new aliases |
+| Old repository URLs | GitHub redirects preserve existing repository links after the rename |
 
 These technical names preserve compatibility; they are not additional public products. Do not bulk-replace them in configuration, databases or provider settings. No content migration is required.
 
-After the repository renames, update a checkout through the established team workflow, including current `main`, before optionally changing its remote:
+After the repository renames, review and incorporate current `main` while preserving local work before optionally changing the remote:
 
 ```sh
 git remote set-url origin https://github.com/HappyMiha/Lokiravia.git
@@ -28,7 +27,7 @@ python -m pip install -e .
 lokiravia --help
 ```
 
-Keep the old repository names unused so GitHub redirects continue working. Retained branches need the updated coordination tooling before recording review or completion after the rename. The old Core dependency URL is deliberately retained as an installable, pinned compatibility reference.
+Keep the old repository names unused so GitHub redirects continue working. Preserve existing branch and pull request history when updating repository links. The Core dependency remains an installable, pinned compatibility reference.
 
 ## Product truth
 

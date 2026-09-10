@@ -1,14 +1,10 @@
 ## Outcome
 
-Task: `core:AF-GC-...` or `cloud:AF-CLD-...`
+Relevant backlog IDs:
 
-Worker: `HappyDucky02` / `HappySnowman` / `HappyHahahaker`
+Upstream dependencies and exact-version evidence:
 
-Claim branch and declared scopes:
-
-Merged prerequisites and upstream commit evidence:
-
-Reviewer worker and downstream impact:
+Review findings and downstream impact:
 
 Describe the operator-visible result and why it matters.
 

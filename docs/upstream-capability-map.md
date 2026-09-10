@@ -2,12 +2,12 @@
 
 AF-CLD-003. Map schema 1; planning evidence inventory, **not product or release acceptance**.
 
-The [machine-readable map](upstream-capability-map.json) covers all **67 Cloud tasks** and **42 AF-GC requirements**. It fixes one implementation owner, an upstream version, a reuse decision, evidence limitations and a concrete integration acceptance scenario for every Cloud capability. The original manifests retain their IDs, dependencies and proposed labels; live engineering claims remain in Core `team-state`.
+The [machine-readable map](upstream-capability-map.json) covers all **67 Cloud tasks** and **42 AF-GC requirements**. It fixes one implementation owner, an upstream version, a reuse decision, evidence limitations and a concrete integration acceptance scenario for every Cloud capability. The original manifests retain their IDs, dependencies and proposed labels. Merged changes and their review evidence record engineering delivery; consumer and release acceptance require their own evidence.
 
 ## Versions and evidence boundaries
 
 - Core baseline: [`d097ac0b04445183c647012a0c92a9d6348135b6`](https://github.com/HappyMiha/AgentFactory/tree/d097ac0b04445183c647012a0c92a9d6348135b6); [42-task manifest](https://github.com/HappyMiha/AgentFactory/blob/d097ac0b04445183c647012a0c92a9d6348135b6/examples/game-creator-backlog.json).
-- Cloud planning baseline: [`720c79b3530cf2dddfd8b0351094a0763f757a63`](https://github.com/HappyMiha/AgentFactory-Cloud/tree/720c79b3530cf2dddfd8b0351094a0763f757a63); [67-task manifest](https://github.com/HappyMiha/AgentFactory-Cloud/blob/720c79b3530cf2dddfd8b0351094a0763f757a63/examples/agentfactory-cloud-backlog.json).
+- Cloud planning baseline (refreshed after development-workflow metadata cleanup; product criteria unchanged): [`39dd3030acd642dccec30abebdd7ce6caf0a2ec8`](https://github.com/HappyMiha/AgentFactory-Cloud/tree/39dd3030acd642dccec30abebdd7ce6caf0a2ec8); [67-task manifest](https://github.com/HappyMiha/AgentFactory-Cloud/blob/39dd3030acd642dccec30abebdd7ce6caf0a2ec8/examples/agentfactory-cloud-backlog.json).
 - Supported integration interface: **unqualified at this pin**. Godot, Unity and Unreal pack versions are **unknown**, represented by `null`. A Core commit is a reproducible source reference; it is not a supported engine/toolchain/profile declaration. AF-CLD-002/005/006 must establish those contracts and evidence.
 - Every capability's `core_version` repeats the exact Core pin. `source-inventory` evidence identifies existing source and test definitions. Resolving these Git blobs does not execute the tests or demonstrate the described product behavior.
 - The separate merged engineering records cover Core AF-GC-001 (portable CI), AF-GC-003 (confirmation behavior) and AF-GC-006 (effective model binding). They do not complete the full game journey, role qualification or Cloud integration. PR5 later made the Python matrix manual-only; skipped matrix jobs are not passing executions.
@@ -21,7 +21,7 @@ Each `integration_test` is a concrete acceptance scenario with status `not-accep
 
 `implementation_owner` names the single destination of the capability, not the repository containing its historical task ID. `Core` owns neutral mechanisms; `Core.Packs` owns optional adapters/templates/target operations outside the scheduler. `Cloud.Platform`, `Cloud.Games`, `Cloud.Community` and `Cloud.Marketplace` are modules of one Cloud repository. Cloud remains the consumer and accepts its own integration.
 
-For example, Cloud 011/014/052 consume Core-owned engine/validator/SDK work; they must not create a second engine implementation in Cloud. Cloud 053 consumes the Core Unity adapter, while the complete consumer Unity journey remains a Cloud acceptance reference. Implementation in another repository needs its own coordinated upstream claim, not an undeclared edit under a Cloud claim. The map assigns responsibility without creating new task IDs or taking ownership of future work.
+For example, Cloud 011/014/052 consume Core-owned engine/validator/SDK work; they must not create a second engine implementation in Cloud. Cloud 053 consumes the Core Unity adapter, while the complete consumer Unity journey remains a Cloud acceptance reference. Implement an upstream capability through a focused change or pull request in its owning repository, then link the reviewed evidence from the Cloud integration. The map assigns responsibility without creating new task IDs or taking ownership of future work.
 
 Decisions mean: **reuse** an already sufficient contract after consumer qualification; **extend** an existing foundation in its owning repository; **migrate** Creator presentation responsibility to Cloud through supported Core contracts, preserving existing operator behavior; **build** a currently unqualified capability at the named owner. No row claims unconditional reuse is already sufficient. These decisions do not authorize deleting or moving current source.
 
@@ -219,7 +219,7 @@ On Windows use `python`. The optional Git check uses only read commands against 
 
 When changing Core versions, first review the actual diff and retain the old evidence references. Pin the new Core commit, qualify the relevant interface/pack/toolchain/profile and record independently accepted consumer results. Missing, stale or incompatible evidence keeps the affected integration blocked; retain the previous qualified deployment instead of silently upgrading it. Update all affected rows, the evidence index and this table in one reviewed change. Changes to the allowed accepted-evidence model need explicit schema/validator review; this planning-only schema deliberately rejects unsupported `verified` claims.
 
-The current automatic coordination workflow runs its selected tooling modules. It does not automatically run this new map suite. The task's exact-commit local check must include `test_upstream_map`; its result and the pinned-object check belong in the PR evidence. This task does not modify the shared workflow owned by coordination tooling.
+Changes to this map must run `python scripts/validate_upstream_map.py` and `test_upstream_map` in a qualified environment. Include their results and the optional pinned-object check in the change review. Passing planning checks does not qualify a consumer integration or release.
 
 ## Game-team proposal consumer
 

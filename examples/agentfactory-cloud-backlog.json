@@ -3142,7 +3142,7 @@
       "review_notes": [
         "Proposed only. Refine the size, implementation owner, needed infrastructure, and test scope before work starts. Keep the stable ID when splitting delivery into smaller changes.",
         "Reusable roles, packs, or adapter work has one upstream implementation in Core. This Cloud item accepts its product integration and links the upstream evidence through AF-CLD-003.",
-        "Split editor and gameplay delivery into narrow upstream contract and implementation claims using the plan; do not reserve all Unreal or UI files in one claim. Keep the existing AF-CLD-052 prerequisite and Godot gates."
+        "Split editor and gameplay delivery into focused upstream contract and implementation tasks using the plan. Keep the existing AF-CLD-052 prerequisite and Godot gates."
       ],
       "labels": [
         "priority:p1",

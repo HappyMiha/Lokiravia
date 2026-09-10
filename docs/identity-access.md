@@ -27,7 +27,7 @@ These are machine-generated credentials, **not human passwords**; replacing them
 with short passwords would invalidate the SHA-256 storage design. Only hashes
 are stored. Secrets are returned once to the trusted provisioning caller and must
 be delivered through its protected channel. Never put them in URLs, logs, browser
-persistent storage, prompts, repository fixtures or the shared task registry.
+persistent storage, prompts, repository fixtures or public development records.
 
 `authenticate(token)` returns a server-resolved `Principal`. Every
 `authorize(principal, action, Resource(...))` call rechecks the current account,
