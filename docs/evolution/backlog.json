@@ -39,8 +39,8 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-001; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L06",
-        "SAFE:L12",
+        "LIT-A:L06",
+        "LIT-A:L12",
         "DESIGN:vision",
         "REPO-AUDIT",
         "USER:living-world"
@@ -87,9 +87,9 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-002; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L10",
-        "SAFE:L11",
-        "TRANSFORMA:TR-S12",
+        "LIT-A:L10",
+        "LIT-A:L11",
+        "LIT-B:TR-S12",
         "DESIGN:vision",
         "REPO-AUDIT",
         "CONTRACT:counterfactual-evaluation"
@@ -185,16 +185,16 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-004; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L02",
-        "SAFE:L04",
-        "TRANSFORMA:TR-S08",
+        "LIT-A:L02",
+        "LIT-A:L04",
+        "LIT-B:TR-S08",
         "DESIGN:vision",
         "REPO-AUDIT",
-        "TRANSFORMA:TR2-06",
+        "LIT-B:TR2-06",
         "CONTRACT:identity-continuity",
-        "TRANSFORMA:TR3-01",
-        "TRANSFORMA:TR3-02",
-        "TRANSFORMA:TR3-04"
+        "LIT-B:TR3-01",
+        "LIT-B:TR3-02",
+        "LIT-B:TR3-04"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -245,14 +245,14 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-005; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L02",
-        "SAFE:L04",
-        "TRANSFORMA:TR-S08",
+        "LIT-A:L02",
+        "LIT-A:L04",
+        "LIT-B:TR-S08",
         "DESIGN:vision",
         "REPO-AUDIT",
-        "TRANSFORMA:TR2-05",
+        "LIT-B:TR2-05",
         "CONTRACT:experience-improvement",
-        "SAFE:SF2-04"
+        "LIT-A:SF2-04"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -297,9 +297,9 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-006; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L01",
-        "SAFE:L02",
-        "SAFE:L04",
+        "LIT-A:L01",
+        "LIT-A:L02",
+        "LIT-A:L04",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -345,12 +345,12 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-007; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L03",
+        "LIT-A:L03",
         "DESIGN:vision",
         "REPO-AUDIT",
         "CONTRACT:experience-improvement",
-        "SAFE:SF2-01",
-        "SAFE:SF2-05"
+        "LIT-A:SF2-01",
+        "LIT-A:SF2-05"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -396,12 +396,12 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-008; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L11",
-        "SAFE:L12",
-        "TRANSFORMA:TR-S04",
+        "LIT-A:L11",
+        "LIT-A:L12",
+        "LIT-B:TR-S04",
         "DESIGN:vision",
         "REPO-AUDIT",
-        "TRANSFORMA:TR2-02"
+        "LIT-B:TR2-02"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -449,7 +449,7 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-009; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L11",
+        "LIT-A:L11",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -493,7 +493,7 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-010; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L11",
+        "LIT-A:L11",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -543,9 +543,9 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-011; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L10",
-        "SAFE:L11",
-        "TRANSFORMA:TR-S12",
+        "LIT-A:L10",
+        "LIT-A:L11",
+        "LIT-B:TR-S12",
         "DESIGN:vision",
         "REPO-AUDIT",
         "USER:living-world",
@@ -701,13 +701,13 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-014; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L06",
-        "SAFE:L08",
+        "LIT-A:L06",
+        "LIT-A:L08",
         "DESIGN:vision",
         "REPO-AUDIT",
-        "TRANSFORMA:TR2-03",
+        "LIT-B:TR2-03",
         "CONTRACT:experience-improvement",
-        "SAFE:SF2-03"
+        "LIT-A:SF2-03"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -752,14 +752,14 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-015; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L03",
-        "SAFE:L08",
-        "SAFE:L12",
+        "LIT-A:L03",
+        "LIT-A:L08",
+        "LIT-A:L12",
         "DESIGN:vision",
         "REPO-AUDIT",
         "CONTRACT:experience-improvement",
-        "SAFE:SF2-05",
-        "SAFE:SF2-06"
+        "LIT-A:SF2-05",
+        "LIT-A:SF2-06"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -808,15 +808,15 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-016; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L06",
-        "SAFE:L07",
+        "LIT-A:L06",
+        "LIT-A:L07",
         "DESIGN:vision",
         "REPO-AUDIT",
         "CONTRACT:experience-improvement",
-        "SAFE:SF2-02",
+        "LIT-A:SF2-02",
         "CONTRACT:identity-continuity",
-        "TRANSFORMA:TR3-01",
-        "TRANSFORMA:TR3-03"
+        "LIT-B:TR3-01",
+        "LIT-B:TR3-03"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -861,8 +861,8 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-017; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L05",
-        "TRANSFORMA:TR-S08",
+        "LIT-A:L05",
+        "LIT-B:TR-S08",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -908,9 +908,9 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-018; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L09",
-        "SAFE:L10",
-        "TRANSFORMA:TR-S13",
+        "LIT-A:L09",
+        "LIT-A:L10",
+        "LIT-B:TR-S13",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -963,8 +963,8 @@
         "DESIGN:vision",
         "REPO-AUDIT",
         "CONTRACT:identity-continuity",
-        "TRANSFORMA:TR3-05",
-        "TRANSFORMA:TR3-06"
+        "LIT-B:TR3-05",
+        "LIT-B:TR3-06"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -1008,7 +1008,7 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-020; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L09",
+        "LIT-A:L09",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -1056,8 +1056,8 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-021; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L09",
-        "SAFE:L10",
+        "LIT-A:L09",
+        "LIT-A:L10",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -1105,8 +1105,8 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-022; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L11",
-        "TRANSFORMA:TR-S05",
+        "LIT-A:L11",
+        "LIT-B:TR-S05",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -1167,11 +1167,11 @@
         "REPO-AUDIT",
         "CONTRACT:platform-world",
         "RSI-SURVEY:R04",
-        "TRANSFORMA:TR2-04",
+        "LIT-B:TR2-04",
         "CONTRACT:recovery",
         "CONTRACT:identity-continuity",
-        "TRANSFORMA:TR3-04",
-        "TRANSFORMA:TR3-05"
+        "LIT-B:TR3-04",
+        "LIT-B:TR3-05"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -1222,14 +1222,14 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-024; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "TRANSFORMA:TR-S14",
+        "LIT-B:TR-S14",
         "DESIGN:vision",
         "REPO-AUDIT",
         "CONTRACT:platform-world",
         "RSI-SURVEY:R04",
         "CONTRACT:experience-improvement",
-        "SAFE:SF2-03",
-        "SAFE:SF2-05"
+        "LIT-A:SF2-03",
+        "LIT-A:SF2-05"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -1286,7 +1286,7 @@
         "REPO-AUDIT",
         "CONTRACT:counterfactual-evaluation",
         "CONTRACT:experience-improvement",
-        "SAFE:SF2-03",
+        "LIT-A:SF2-03",
         "CONTRACT:creator-evolution"
       ],
       "definition_of_ready": [
@@ -1340,13 +1340,13 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-026; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L09",
-        "SAFE:L11",
-        "SAFE:L12",
-        "TRANSFORMA:TR-S04",
+        "LIT-A:L09",
+        "LIT-A:L11",
+        "LIT-A:L12",
+        "LIT-B:TR-S04",
         "DESIGN:vision",
         "REPO-AUDIT",
-        "TRANSFORMA:TR2-06"
+        "LIT-B:TR2-06"
       ],
       "definition_of_ready": [
         "Прийняті контракти залежностей із точними версіями й межами доказів.",
@@ -1500,8 +1500,8 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-029; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L05",
-        "TRANSFORMA:TR-S08",
+        "LIT-A:L05",
+        "LIT-B:TR-S08",
         "DESIGN:vision",
         "REPO-AUDIT"
       ],
@@ -1566,11 +1566,11 @@
         "Versioned game-pack specification / exact artifact and scenario receipts for AF-LW-030; human evidence when required by acceptance."
       ],
       "source_evidence": [
-        "SAFE:L02",
-        "SAFE:L11",
-        "TRANSFORMA:TR-S08",
-        "TRANSFORMA:TR-S12",
-        "TRANSFORMA:TR-S13",
+        "LIT-A:L02",
+        "LIT-A:L11",
+        "LIT-B:TR-S08",
+        "LIT-B:TR-S12",
+        "LIT-B:TR-S13",
         "DESIGN:vision",
         "REPO-AUDIT",
         "USER:living-world",

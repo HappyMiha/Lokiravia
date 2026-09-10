@@ -2,7 +2,7 @@
 
 Дата редакції: 2026-09-10. Q07 уточнює AF-LW013/025 та evidence boundary AF-LW030; IDs і залежності збережені. Статус: незалежна дослідницька пропозиція для консолідації з чинним беклогом, не затверджений план реалізації. 30 елементів `AF-LW-001`–`AF-LW-030`. Код не створюється.
 
-Джерело натхнення: [дослідницька записка про три книги](running-safe-analysis.md). Конкретні сценарії нижче оригінальні; вони не відтворюють книжкові світи. Це ігровий шар: Cloud володіє авторськими шляхами, а Core володіє загальними механізмами виконання, подій, еволюції, оцінювання та відкату. Тут описано, **що саме має бути можливим у світі та як це перевіряти**, а не повторну розробку auth, billing, import, build чи універсального evolution engine.
+Джерело натхнення: [дослідницька записка про три книги](literary-a-analysis.md). Конкретні сценарії нижче оригінальні; вони не відтворюють книжкові світи. Це ігровий шар: Cloud володіє авторськими шляхами, а Core володіє загальними механізмами виконання, подій, еволюції, оцінювання та відкату. Тут описано, **що саме має бути можливим у світі та як це перевіряти**, а не повторну розробку auth, billing, import, build чи універсального evolution engine.
 
 Зовнішні залежності сформульовано як потрібні контракти, не як твердження, що вони вже реалізовані. Числові пороги — початкові критерії приймання прототипу, які потребують перевірки. Дослідницькі інтерв’ю можуть змінити їх, але зміна має бути записана до повторного оцінювання.
 
@@ -22,7 +22,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L06, SAFE:L12, DESIGN:vision, REPO-AUDIT, USER:living-world
+**Підстави:** LIT-A:L06, LIT-A:L12, DESIGN:vision, REPO-AUDIT, USER:living-world
 
 ## AF-LW-002 — Ігрова модель подій і наслідків
 
@@ -36,7 +36,7 @@
 
 **Контракти Core:** core:AF-RSI-032
 
-**Підстави:** SAFE:L10, SAFE:L11, TRANSFORMA:TR-S12, DESIGN:vision, REPO-AUDIT, CONTRACT:counterfactual-evaluation
+**Підстави:** LIT-A:L10, LIT-A:L11, LIT-B:TR-S12, DESIGN:vision, REPO-AUDIT, CONTRACT:counterfactual-evaluation
 
 ## AF-LW-003 — Версійована книга законів і відкритих можливостей
 
@@ -64,7 +64,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L02, SAFE:L04, TRANSFORMA:TR-S08, DESIGN:vision, REPO-AUDIT, TRANSFORMA:TR2-06, CONTRACT:identity-continuity, TRANSFORMA:TR3-01, TRANSFORMA:TR3-02, TRANSFORMA:TR3-04
+**Підстави:** LIT-A:L02, LIT-A:L04, LIT-B:TR-S08, DESIGN:vision, REPO-AUDIT, LIT-B:TR2-06, CONTRACT:identity-continuity, LIT-B:TR3-01, LIT-B:TR3-02, LIT-B:TR3-04
 
 ## AF-LW-005 — Розгляд незапланованої дії гравця
 
@@ -78,7 +78,7 @@
 
 **Контракти Core:** core:AF-RSI-031
 
-**Підстави:** SAFE:L02, SAFE:L04, TRANSFORMA:TR-S08, DESIGN:vision, REPO-AUDIT, TRANSFORMA:TR2-05, CONTRACT:experience-improvement, SAFE:SF2-04
+**Підстави:** LIT-A:L02, LIT-A:L04, LIT-B:TR-S08, DESIGN:vision, REPO-AUDIT, LIT-B:TR2-05, CONTRACT:experience-improvement, LIT-A:SF2-04
 
 ## AF-LW-006 — Ремесло з матеріальною ціною та співучастю
 
@@ -92,7 +92,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L01, SAFE:L02, SAFE:L04, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L01, LIT-A:L02, LIT-A:L04, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-007 — Продуктивна помилка і вторинне застосування
 
@@ -106,7 +106,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L03, DESIGN:vision, REPO-AUDIT, CONTRACT:experience-improvement, SAFE:SF2-01, SAFE:SF2-05
+**Підстави:** LIT-A:L03, DESIGN:vision, REPO-AUDIT, CONTRACT:experience-improvement, LIT-A:SF2-01, LIT-A:SF2-05
 
 ## AF-LW-008 — Область впливу та зрозумілий ризик пригоди
 
@@ -120,7 +120,7 @@
 
 **Контракти Core:** core:AF-RSI-031
 
-**Підстави:** SAFE:L11, SAFE:L12, TRANSFORMA:TR-S04, DESIGN:vision, REPO-AUDIT, TRANSFORMA:TR2-02
+**Підстави:** LIT-A:L11, LIT-A:L12, LIT-B:TR-S04, DESIGN:vision, REPO-AUDIT, LIT-B:TR2-02
 
 ## AF-LW-009 — Перспективна пам’ять NPC і свідків
 
@@ -134,7 +134,7 @@
 
 **Контракти Core:** core:AF-RSI-031, core:AF-RSI-032
 
-**Підстави:** SAFE:L11, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L11, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-010 — Сліди, за якими гравець може відновити причинність
 
@@ -148,7 +148,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L11, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L11, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-011 — Каскади з порогами, затримкою та згасанням
 
@@ -162,7 +162,7 @@
 
 **Контракти Core:** core:AF-RSI-033
 
-**Підстави:** SAFE:L10, SAFE:L11, TRANSFORMA:TR-S12, DESIGN:vision, REPO-AUDIT, USER:living-world, CONTRACT:counterfactual-evaluation
+**Підстави:** LIT-A:L10, LIT-A:L11, LIT-B:TR-S12, DESIGN:vision, REPO-AUDIT, USER:living-world, CONTRACT:counterfactual-evaluation
 
 ## AF-LW-012 — Контрфактичний перегляд світового сценарію
 
@@ -204,7 +204,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L06, SAFE:L08, DESIGN:vision, REPO-AUDIT, TRANSFORMA:TR2-03, CONTRACT:experience-improvement, SAFE:SF2-03
+**Підстави:** LIT-A:L06, LIT-A:L08, DESIGN:vision, REPO-AUDIT, LIT-B:TR2-03, CONTRACT:experience-improvement, LIT-A:SF2-03
 
 ## AF-LW-015 — Комічний наслідок із новим вибором
 
@@ -218,7 +218,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L03, SAFE:L08, SAFE:L12, DESIGN:vision, REPO-AUDIT, CONTRACT:experience-improvement, SAFE:SF2-05, SAFE:SF2-06
+**Підстави:** LIT-A:L03, LIT-A:L08, LIT-A:L12, DESIGN:vision, REPO-AUDIT, CONTRACT:experience-improvement, LIT-A:SF2-05, LIT-A:SF2-06
 
 ## AF-LW-016 — Тиха сесія та речі зі спільною історією
 
@@ -232,7 +232,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L06, SAFE:L07, DESIGN:vision, REPO-AUDIT, CONTRACT:experience-improvement, SAFE:SF2-02, CONTRACT:identity-continuity, TRANSFORMA:TR3-01, TRANSFORMA:TR3-03
+**Підстави:** LIT-A:L06, LIT-A:L07, DESIGN:vision, REPO-AUDIT, CONTRACT:experience-improvement, LIT-A:SF2-02, CONTRACT:identity-continuity, LIT-B:TR3-01, LIT-B:TR3-03
 
 ## AF-LW-017 — Рівноцінні внески гравця та NPC в експедицію
 
@@ -246,7 +246,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L05, TRANSFORMA:TR-S08, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L05, LIT-B:TR-S08, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-018 — Установи з потребами та обов’язками
 
@@ -260,7 +260,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L09, SAFE:L10, TRANSFORMA:TR-S13, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L09, LIT-A:L10, LIT-B:TR-S13, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-019 — Народження й згасання місцевої традиції
 
@@ -274,7 +274,7 @@
 
 **Контракти Core:** core:AF-RSI-034
 
-**Підстави:** DESIGN:vision, REPO-AUDIT, CONTRACT:identity-continuity, TRANSFORMA:TR3-05, TRANSFORMA:TR3-06
+**Підстави:** DESIGN:vision, REPO-AUDIT, CONTRACT:identity-continuity, LIT-B:TR3-05, LIT-B:TR3-06
 
 ## AF-LW-020 — Переговори про зміни спільного простору
 
@@ -288,7 +288,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L09, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L09, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-021 — Відбудова з вибором майбутнього місця
 
@@ -302,7 +302,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L09, SAFE:L10, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L09, LIT-A:L10, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-022 — Чутки, репутація та можливість спростування
 
@@ -316,7 +316,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L11, TRANSFORMA:TR-S05, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L11, LIT-B:TR-S05, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-023 — Публікація еволюції світу з історією версій
 
@@ -330,7 +330,7 @@
 
 **Контракти Core:** core:AF-RSI-034
 
-**Підстави:** DESIGN:vision, REPO-AUDIT, CONTRACT:platform-world, RSI-SURVEY:R04, TRANSFORMA:TR2-04, CONTRACT:recovery, CONTRACT:identity-continuity, TRANSFORMA:TR3-04, TRANSFORMA:TR3-05
+**Підстави:** DESIGN:vision, REPO-AUDIT, CONTRACT:platform-world, RSI-SURVEY:R04, LIT-B:TR2-04, CONTRACT:recovery, CONTRACT:identity-continuity, LIT-B:TR3-04, LIT-B:TR3-05
 
 ## AF-LW-024 — Ігрова кампанія перевірюваного самовдосконалення
 
@@ -344,7 +344,7 @@
 
 **Контракти Core:** core:AF-RSI-007, core:AF-RSI-034
 
-**Підстави:** TRANSFORMA:TR-S14, DESIGN:vision, REPO-AUDIT, CONTRACT:platform-world, RSI-SURVEY:R04, CONTRACT:experience-improvement, SAFE:SF2-03, SAFE:SF2-05
+**Підстави:** LIT-B:TR-S14, DESIGN:vision, REPO-AUDIT, CONTRACT:platform-world, RSI-SURVEY:R04, CONTRACT:experience-improvement, LIT-A:SF2-03, LIT-A:SF2-05
 
 ## AF-LW-025 — Плейтест несподіванки, справедливості й бажання залишитися
 
@@ -358,7 +358,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** DESIGN:vision, REPO-AUDIT, CONTRACT:counterfactual-evaluation, CONTRACT:experience-improvement, SAFE:SF2-03, CONTRACT:creator-evolution
+**Підстави:** DESIGN:vision, REPO-AUDIT, CONTRACT:counterfactual-evaluation, CONTRACT:experience-improvement, LIT-A:SF2-03, CONTRACT:creator-evolution
 
 ## AF-LW-026 — Набір зловживань гравців і авторів світу
 
@@ -372,7 +372,7 @@
 
 **Контракти Core:** core:AF-RSI-031, core:AF-RSI-032, core:AF-RSI-034
 
-**Підстави:** SAFE:L09, SAFE:L11, SAFE:L12, TRANSFORMA:TR-S04, DESIGN:vision, REPO-AUDIT, TRANSFORMA:TR2-06
+**Підстави:** LIT-A:L09, LIT-A:L11, LIT-A:L12, LIT-B:TR-S04, DESIGN:vision, REPO-AUDIT, LIT-B:TR2-06
 
 ## AF-LW-027 — Повернення в світ, який жив без гравця
 
@@ -418,7 +418,7 @@
 
 **Контракти Core:** немає прямих нових контрактів; транзитивні залежать від інших карток
 
-**Підстави:** SAFE:L05, TRANSFORMA:TR-S08, DESIGN:vision, REPO-AUDIT
+**Підстави:** LIT-A:L05, LIT-B:TR-S08, DESIGN:vision, REPO-AUDIT
 
 ## AF-LW-030 — Перший однокористувацький доказ за 30 хвилин
 
@@ -436,7 +436,7 @@ AF-LW-010 входить транзитивно через AF-LW-014. AF-LW-006�
 
 **Контракти Core:** core:AF-RSI-031, core:AF-RSI-032, core:AF-RSI-033
 
-**Підстави:** SAFE:L02, SAFE:L11, TRANSFORMA:TR-S08, TRANSFORMA:TR-S12, TRANSFORMA:TR-S13, DESIGN:vision, REPO-AUDIT, USER:living-world, CONTRACT:recovery, CONTRACT:counterfactual-evaluation, CONTRACT:creator-evolution
+**Підстави:** LIT-A:L02, LIT-A:L11, LIT-B:TR-S08, LIT-B:TR-S12, LIT-B:TR-S13, DESIGN:vision, REPO-AUDIT, USER:living-world, CONTRACT:recovery, CONTRACT:counterfactual-evaluation, CONTRACT:creator-evolution
 
 ## Пропонована послідовність
 
