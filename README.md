@@ -1,12 +1,14 @@
 # Lokiravia
 
-План розвитку обох продуктів: [єдиний порядок280 вимог](docs/evolution/implementation-order.md) · [склад перших релізів](docs/evolution/first-releases.md).
+English · [Українська — концепція, архітектура й беклог](docs/evolution/README.md)
+
+Development plan for both products: [unified order of 280 requirements](docs/evolution/implementation-order.en.md) · [first-release scope](docs/evolution/first-releases.en.md).
 
 ![Lokiravia by Lokvetia](src/agentfactory_cloud/static/brand-wordmark.svg)
 
 **Your idea. Your game world.**
 
-**Концепція й архітектура:** [Живий світ, самовдосконалення Core, спільний портфель із 65 задач і план доказів](docs/evolution/README.md) — проєктна документація, не заява про готову реалізацію.
+**Concept and architecture:** [Living worlds, Core self-improvement, a joint 65-task portfolio and evidence plan](docs/evolution/README.en.md) — design documentation, not a claim of completed implementation.
 
 A game creation platform by [Lokvetia](https://lokvetia.com), powered by
 [Lokvetia Core](https://github.com/HappyMiha/Lokvetia-Core).
@@ -14,7 +16,7 @@ A game creation platform by [Lokvetia](https://lokvetia.com), powered by
 [Product domain](https://lokiravia.com) · [Start locally](docs/game-brief-intake.md) ·
 [Product plan](docs/product-description.md) · [Roadmap](docs/roadmap.md)
 
-**Деплой і релізи:** [Deployment dashboard (в Lokvetia Core)](https://github.com/HappyMiha/Lokvetia-Core/blob/main/docs/deploy-dashboard.html) · [Автодеплой і rollback для Lokiravia](docs/autodeploy.md)
+**Deployment and releases:** [Deployment dashboard (in Lokvetia Core)](https://github.com/HappyMiha/Lokvetia-Core/blob/main/docs/deploy-dashboard.html) · [Lokiravia automatic deployment and rollback](docs/autodeploy.md)
 
 Formerly **AgentFactory Cloud**. Lokiravia is the creator product; Lokvetia is
 the family brand, and Lokvetia Core is the independent orchestration engine.
