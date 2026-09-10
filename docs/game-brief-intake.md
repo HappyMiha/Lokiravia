@@ -25,8 +25,9 @@ be lost when the browser is closed or refreshed.
 ## Run the local workspace
 
 Use Python 3.11 or newer and Git. From this repository, install into a virtual
-environment with `python -m pip install -e .`. The package pins the accepted
-Core commit `7ec9ff33f1c4e7f2980e4b121d05f3c366acedd1`, including its web extra.
+environment with `python -m pip install -e .`. The package currently pins
+Core commit `480849f78957bb6b2fd7ab341300d54955aeabb8`, including its web extra,
+as declared in `pyproject.toml`.
 Installation requires network access to obtain dependencies. It does not
 install Unreal, Godot, Ollama, or any model.
 

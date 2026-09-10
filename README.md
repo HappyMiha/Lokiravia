@@ -1,5 +1,7 @@
 # Lokiravia
 
+План розвитку обох продуктів: [єдиний порядок280 вимог](docs/evolution/implementation-order.md) · [склад перших релізів](docs/evolution/first-releases.md).
+
 ![Lokiravia by Lokvetia](src/agentfactory_cloud/static/brand-wordmark.svg)
 
 **Your idea. Your game world.**
