@@ -5,7 +5,7 @@
 **Brand revision:** 2026-09-08. Lokiravia is the creator product by Lokvetia,
 powered by Lokvetia Core. Core and Cloud retain their architectural meanings.
 
-**Status:** Product roadmap. The live shared task register records current engineering work; release gates below require their own acceptance evidence.
+**Status:** Product roadmap. Merged changes and their review evidence record engineering delivery; release gates below require their own acceptance evidence.
 
 This roadmap keeps the owner-supplied seven milestones, seven epics and 67 stable AF-CLD task IDs. It extends the 42-task AF-GC plan in Core. It does not mark that upstream work complete.
 

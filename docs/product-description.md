@@ -7,7 +7,7 @@ name AgentFactory Cloud. The product domain is [lokiravia.com](https://lokiravia
 [lokvetia.com](https://lokvetia.com) is the family brand domain. Domain ownership
 does not establish hosted product availability.
 
-**Status:** Product direction with early local editor and planning components. Hosted game creation and the Unreal path still need qualification. The live shared task register records engineering progress; this description states the intended product and its acceptance boundaries.
+**Status:** Product direction with early local editor and planning components. Hosted game creation and the Unreal path still need qualification. Merged changes and their review evidence record engineering delivery; this description states the intended product and its acceptance boundaries.
 
 ## 1. What we want to build
 

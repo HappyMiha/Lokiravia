@@ -84,13 +84,13 @@ For the first complete vertical slice, keep one evidence bundle containing the b
 
 Existing `AF-CLD-054` already owns Unreal feasibility and qualification, depends on `AF-CLD-052`, and sits in M5. This user-requested early desk study feeds it; it does not bypass those delivery dependencies or mark it done. `AF-CLD-005` remains the shared engine/target/pack consumer proposal. `AF-CLD-006` supplies the separate evidence gates.
 
-AF-CLD-054 now links this plan and distinguishes editor qualification from the full gameplay-AI claim. The gameplay contracts and implementations below remain separate delivery slices that need narrow upstream claims before implementation; publishing this plan does not create or complete those capabilities. Put reusable adapter/runtime APIs in Core outside its neutral scheduler, product setup/billing/qualification in Cloud, and game-specific tools in the game pack. A separate plugin repository is justified only after the experiment identifies an independently released Unreal module; this research does not create one pre-emptively.
+AF-CLD-054 now links this plan and distinguishes editor qualification from the full gameplay-AI claim. The gameplay contracts and implementations below remain separate delivery slices that need scoped upstream tasks before implementation; publishing this plan does not create or complete those capabilities. Put reusable adapter/runtime APIs in Core outside its neutral scheduler, product setup/billing/qualification in Cloud, and game-specific tools in the game pack. A separate plugin repository is justified only after the experiment identifies an independently released Unreal module; this research does not create one pre-emptively.
 
 Open questions for the experiment: arbitrary Blueprint graph coverage, runtime sidecar deployment in Shipping, supported exact Unreal/compiler combination, provider/model availability on the player machine, actual inference cost, and reliable packaging without manual editor intervention. No Unreal support claim should be made until these are measured.
 
 ## Delivery slices for the full use case
 
-This is the delivery map for the full use case. The labels below are planning labels under this design, not new task IDs or active implementation claims. Keep the existing Unreal feasibility task and its prerequisites. Review the shared contracts first, then allow narrow implementation tasks to run in parallel.
+This is the delivery map for the full use case. The labels below are planning labels under this design, not new task IDs or completed implementations. Keep the existing Unreal feasibility task and its prerequisites. Review the shared contracts first, then allow narrow implementation tasks to run in parallel.
 
 | Slice | Depends on | Main home | Done means |
 | --- | --- | --- | --- |
@@ -105,7 +105,7 @@ This is the delivery map for the full use case. The labels below are planning la
 
 C and E can proceed independently after B is accepted. G can also start from B, using a declared test double before real service qualification. Test doubles do not satisfy E, G or H's live acceptance. D must not wait for every future NPC feature: prove a normal game package first, then repeat the player test with the runtime included.
 
-Do not reserve all engine or UI files under one large Unreal claim. Declare exact paths and the editor session as a shared resource. Binary maps and assets need an explicit single-writer policy; Git branches alone do not resolve simultaneous edits to the same Unreal asset. A reviewer inspects the resulting game behavior as well as the source diff.
+Keep engine and UI changes focused and review their integration boundaries. An active editor session needs an explicit owner. Binary maps and assets need an explicit single-writer policy; Git branches alone do not resolve simultaneous edits to the same Unreal asset. A reviewer inspects the resulting game behavior as well as the source diff.
 
 ## What the first experiment must distinguish
 
@@ -123,7 +123,7 @@ The three development PCs can contribute different test evidence after their act
 
 These are proposed acceptance requirements from a second document review. They are not capabilities already verified in Lokiravia or the candidate plugins.
 
-1. **Recover editor ownership safely.** Reuse Core worker ownership to bind each editor session to a project, workspace, lease and fencing token. Give commands stable IDs. After a timeout or coordinator restart, inspect whether an asset was created before retrying it. An expired worker must not continue changing the project after ownership transfers. A queue inside one process does not coordinate three computers by itself.
+1. **Recover editor ownership safely.** Reuse Core worker ownership to bind each editor session to a project, workspace, lease and fencing token. Give commands stable IDs. After a timeout or coordinator restart, inspect whether an asset was created before retrying it. An expired worker must not continue changing the project after ownership transfers. A queue inside one process does not coordinate separate worker processes by itself.
 2. **Measure three kinds of repeatability separately.** Repeat generation from a brief and record variation and manual help. Rebuild an accepted source revision with locked assets and dependencies. Replay a player scenario from a known save. Bind each package receipt to source, assets, engine, compiler, plugins, build configuration and output hashes. Do not require identical prompts to produce identical games, or claim byte-identical builds without testing that property.
 3. **Choose what ships.** Compare an editor-only MCP setup with a deliberately enabled gameplay MCP setup. A game-owned runtime can use another transport. Inspect staged files, processes and listeners as well as connection status; a disconnected component may still be present. The player environment must have no inherited developer credentials, source checkout, editor or undeclared model service. Record its GPU, driver and installed prerequisites. A second developer PC qualifies only when its player environment is isolated accordingly.
 4. **Partition assets and test the combined project.** Declare referenced maps, Blueprints, materials and generated metadata that a task can change. Use separate content areas where practical, with one owner for integration. Reopen and cook the combined project before accepting a merge. Passing each branch's tests does not prove that their asset references work together.
@@ -135,7 +135,7 @@ Editor ownership, build provenance and session/save semantics belong in slice B 
 
 ## Proposed catalogue revision
 
-Keep the first Godot release and its existing dependencies. This revision extends AF-CLD-054 with editor/build evidence and the conditional full-use-case gate. Register the separate upstream gameplay-AI delivery tasks after their contracts and exact scopes are reviewed. The table below maps the delivery gaps to existing work and the needed follow-ups. It does not allocate new IDs or change completed-task acceptance.
+Keep the first Godot release and its existing dependencies. This revision extends AF-CLD-054 with editor/build evidence and the conditional full-use-case gate. Define separate upstream gameplay-AI delivery tasks after their contracts and exact scopes are reviewed. The table below maps the delivery gaps to existing work and the needed follow-ups. It does not allocate new IDs or change completed-task acceptance.
 
 | Gap | Smallest catalogue change | Owner and dependency |
 | --- | --- | --- |

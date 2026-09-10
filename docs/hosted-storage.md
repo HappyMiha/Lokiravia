@@ -2,13 +2,13 @@
 
 Status: implemented component awaiting exact-commit peer review. The isolated PostgreSQL profile has actual runtime tests; hosted release acceptance is separate.
 
-Cloud owns tenant/product records, product audit, request idempotency and a transactional delivery outbox. Core remains the single mission/execution authority. The accepted handoff is AutonomousMissionIntakeService with stable mission/source IDs. PostgreSQL must not copy Core mission tables, execute agent work, invent a second task register, or infer execution authority from a stored Cloud record.
+Cloud owns tenant/product records, product audit, request idempotency and a transactional delivery outbox. Core remains the single mission/execution authority. The accepted handoff is AutonomousMissionIntakeService with stable mission/source IDs. PostgreSQL must not copy Core mission tables, execute agent work, invent a second execution queue, or infer execution authority from a stored Cloud record.
 
 ## Proposed narrow interface
 
 A trusted application composition resolves a current identity and tenant before using a tenant-bound repository. The storage adapter provides atomic record mutations with expected revisions, immutable source/build identities, append-only audit, request-key deduplication and an outbox event in the same transaction. Reads and writes require an explicit tenant context; database policy independently restricts rows. The runtime database role must not own tables or bypass row security. Migration/admin credentials are separate from runtime credentials.
 
-The outbox is delivery bookkeeping for Cloud product events, not a scheduler or the team register. Delivery is at least once, with stable event IDs, bounded leases and acknowledgement by matching lease token. Consumers must deduplicate event IDs. A crash before commit publishes nothing; a crash after delivery before acknowledgement can redeliver the same event.
+The outbox is delivery bookkeeping for Cloud product events, not an execution scheduler. Delivery is at least once, with stable event IDs, bounded leases and acknowledgement by matching lease token. Consumers must deduplicate event IDs. A crash before commit publishes nothing; a crash after delivery before acknowledgement can redeliver the same event.
 
 SourceVersion and Build records retain their accepted IDs, digests and references during migration and replay. Existing local briefs reference authoritative Core source/mission IDs; those references remain external and unchanged. No hosted brief API is mounted by this task. Existing SQLite local intake/identity behavior remains the local profile until an explicit consumer integration is reviewed.
 

@@ -9,7 +9,8 @@ The separately reported server has no verified target, access or inventory in
 the current evidence. Do not infer that it is any development PC, scan possible
 addresses or deploy to it. Its inventory, access roles, backup/recovery,
 network/service boundaries and capacity decision remain unresolved acceptance
-gates. HappyDucky02 coordinates the three owners' development-node lab tests.
+gates. Each development-node qualification needs an explicitly selected target,
+operator permission, and recorded test evidence.
 
 Run `python scripts/qualify_workers.py inventory --workspace <local-workspace>
 --output <new-private-file>` in a qualified Python environment. This performs

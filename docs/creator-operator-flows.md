@@ -2,8 +2,8 @@
 
 Version 1 is a clickable, synthetic design proposal. It separates the creator's
 journey from service operations. It implements no accounts, builds, publishing,
-payments, provider calls or production authorization. The single task registry
-records merged engineering delivery separately from human product acceptance.
+payments, provider calls or production authorization. Merged engineering changes
+and their review evidence remain separate from human product acceptance.
 
 From the repository root, preview only the prototype directory on loopback:
 

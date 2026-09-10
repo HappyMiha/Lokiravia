@@ -6,7 +6,7 @@ the exact historical planning wording to match the pinned machine-readable
 backlog and upstream evidence. This is a naming transition, with the same
 task IDs and acceptance gates. See the [brand migration guide](brand/migration.md).
 
-Planning revision: **2026-09-06**. The **67 stable tasks and 7 epics** retain their product requirements. Proposed labels below describe the planning baseline; use the [live shared task register](https://github.com/HappyMiha/AgentFactory/blob/team-state/team-state.json) for current ownership and engineering completion. Release and deployment acceptance remain separate.
+Planning revision: **2026-09-06**. The **67 stable tasks and 7 epics** retain their product requirements. Proposed labels below describe the planning baseline. Merged changes and their review evidence record engineering delivery; release and deployment acceptance remain separate.
 
 The [JSON backlog](../examples/agentfactory-cloud-backlog.json) is the source of truth for IDs, dependencies, roles, sizes, and acceptance criteria. This document is its readable view. The [product description](product-description.md) explains the goal; the [roadmap](roadmap.md) explains the order; [planning notes](planning-notes.md) record changes from the supplied package.
 
@@ -1445,7 +1445,7 @@ Depends on: AF-CLD-052.
 
 **Expected output:** Unreal feasibility report and explicit go/no-go decision; If qualified, an adapter package, support matrix and real build/run evidence
 
-**Delivery plan:** [Architecture, separate editor/gameplay slices and acceptance](unreal-gameplay-plan.md). Split editor and gameplay delivery into narrow upstream contract and implementation claims using the plan; do not reserve all Unreal or UI files in one claim. Keep the existing AF-CLD-052 prerequisite and Godot gates.
+**Delivery plan:** [Architecture, separate editor/gameplay slices and acceptance](unreal-gameplay-plan.md). Split editor and gameplay delivery into focused upstream contract and implementation tasks using the plan. Keep the existing AF-CLD-052 prerequisite and Godot gates.
 
 ### AF-CLD-055
 

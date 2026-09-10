@@ -31,7 +31,7 @@ Then choose **Plan the first playable version** to review a small scope, its
 future roadmap, concrete tasks and a clearly labelled local AI estimate.
 See [first-playable planning](docs/first-playable-planning.md) for its limits.
 
-**Three-computer development:** [team workflow](docs/team-workflow.md) · [live shared task register](https://github.com/HappyMiha/Lokvetia-Core/blob/team-state/team-state.json). Each worker claims a task and uses an owned branch with checks before push and a pull request into `main`.
+**Contributing:** [repository guidance and relevant checks](CONTRIBUTING.md). Keep implementation evidence and product acceptance separate.
 
 ## The product direction
 
@@ -68,7 +68,7 @@ The intended audience includes creators aged 12+ and adults. Actual access, publ
 3. [Backlog](docs/backlog.md) — readable tasks and acceptance criteria.
 4. [Machine-readable backlog](examples/agentfactory-cloud-backlog.json) — seven epics and 67 stable AF-CLD tasks, schema v2.
 
-The plan is based on the owner's supplied Cloud planning package. It extends the 42 AF-GC tasks in Core and preserves their upstream role. The live shared task register records current engineering progress; backlog descriptions preserve the original acceptance requirements. A task entry, valid JSON file or merged component is not evidence of a playable game.
+The plan is based on the owner's supplied Cloud planning package. It extends the 42 AF-GC tasks in Core and preserves their upstream role. Merged changes and their review evidence record engineering delivery; backlog descriptions preserve the original acceptance requirements. A task entry, valid JSON file or merged component is not evidence of a playable game.
 
 The [Core/Cloud responsibility contract](docs/core-cloud-boundary.md) adds the AF-CLD-001 ownership map, rights records and design walkthroughs. It remains subject to integration and owner review.
 

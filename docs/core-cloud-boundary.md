@@ -182,8 +182,8 @@ Core commit and its evidence; this map alone establishes no implementation statu
 Provider, engine and third-party terms still require review for the selected use.
 Owner approval of Cloud license terms remains separate from this design.
 
-Author walkthrough: HappyHahahaker reviewed the game and non-game examples against
-all three AF-CLD-001 criteria. Independent integration review and owner acceptance
-remain pending in the task PR. Neither this document nor its tests mark the task
-or product accepted; the shared register records completion only after review and
-merge under the team workflow.
+The author walkthrough reviewed the game and non-game examples against all three
+AF-CLD-001 criteria. Independent integration review and owner acceptance remain
+pending in the task PR. Neither this document nor its tests mark the task or
+product accepted. Merged implementation evidence and product acceptance remain
+separate records.
