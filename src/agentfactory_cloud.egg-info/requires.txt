@@ -1,0 +1,1 @@
+agent-factory-orchestrator[web] @ git+https://github.com/HappyMiha/Lokvetia-Core.git@480849f78957bb6b2fd7ab341300d54955aeabb8

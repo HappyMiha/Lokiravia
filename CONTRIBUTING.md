@@ -12,7 +12,9 @@ Contribution does not require a machine identity, central task reservation, or
 machine-specific branch name.
 
 Review the diff and run the checks relevant to the final version. Planning changes
-should run `python scripts/validate_backlog.py`. Changes to the corresponding
+should run `python scripts/validate_backlog.py`. A task marked `status:accepted`
+must record at least one `evidence` entry; the validator refuses a manifest that
+claims acceptance with nothing recorded. Changes to the corresponding
 contracts or capability map should also run:
 
 ```sh

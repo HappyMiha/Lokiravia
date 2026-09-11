@@ -334,6 +334,20 @@
         "size:s",
         "status:proposed",
         "product:agentfactory-cloud"
+      ],
+      "evidence": [
+        {
+          "kind": "document",
+          "reference": "docs/core-cloud-boundary.md",
+          "note": "ownership split between the reusable engine and the game service",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "document",
+          "reference": "docs/product-description.md",
+          "note": "the product vocabulary the boundary uses",
+          "recorded_by": "Repository maintainer"
+        }
       ]
     },
     {
@@ -384,6 +398,32 @@
         "size:m",
         "status:proposed",
         "product:agentfactory-cloud"
+      ],
+      "evidence": [
+        {
+          "kind": "document",
+          "reference": "contracts/v1/domain.json",
+          "note": "versioned entity and scenario definitions",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "document",
+          "reference": "docs/domain-model.md",
+          "note": "readable view of the same contract",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "test",
+          "reference": "tests/test_domain_contracts.py",
+          "note": "entities and scenario requests checked against the contract",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "code",
+          "reference": "scripts/validate_domain_contracts.py",
+          "note": "repository check; design fixtures only, no runtime is claimed",
+          "recorded_by": "Repository maintainer"
+        }
       ]
     },
     {
@@ -434,6 +474,20 @@
         "size:s",
         "status:proposed",
         "product:agentfactory-cloud"
+      ],
+      "evidence": [
+        {
+          "kind": "document",
+          "reference": "docs/upstream-capability-map.md",
+          "note": "Cloud capabilities mapped to the upstream Core tasks",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "code",
+          "reference": "scripts/validate_upstream_map.py",
+          "note": "checks the map; accepts no product gate",
+          "recorded_by": "Repository maintainer"
+        }
       ]
     },
     {
@@ -536,6 +590,26 @@
         "size:m",
         "status:proposed",
         "product:agentfactory-cloud"
+      ],
+      "evidence": [
+        {
+          "kind": "document",
+          "reference": "contracts/v1/engine-target-pack.json",
+          "note": "engine, target and pack interfaces with typed results",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "document",
+          "reference": "docs/engine-target-pack-contract.md",
+          "note": "readable interface description",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "test",
+          "reference": "tests/test_engine_target_pack.py",
+          "note": "synthetic operation results; no engine runs",
+          "recorded_by": "Repository maintainer"
+        }
       ]
     },
     {
@@ -586,6 +660,32 @@
         "size:s",
         "status:proposed",
         "product:agentfactory-cloud"
+      ],
+      "evidence": [
+        {
+          "kind": "document",
+          "reference": "contracts/v1/evidence-policy.json",
+          "note": "gate rules and evidence envelope, policy 1.0.0",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "document",
+          "reference": "docs/evidence-gates.md",
+          "note": "the five gates and what a positive result means",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "document",
+          "reference": "docs/release-review-template.md",
+          "note": "reviewer and owner acceptance record",
+          "recorded_by": "Repository maintainer"
+        },
+        {
+          "kind": "test",
+          "reference": "tests/test_evidence_gates.py",
+          "note": "synthetic scenarios across the separate gates; no real build accepted",
+          "recorded_by": "Repository maintainer"
+        }
       ]
     },
     {

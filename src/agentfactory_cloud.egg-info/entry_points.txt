@@ -1,0 +1,3 @@
+[console_scripts]
+agentfactory-brief = agentfactory_cloud.brief_web:main
+lokiravia = agentfactory_cloud.brief_web:main
