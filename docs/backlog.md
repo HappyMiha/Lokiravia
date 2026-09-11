@@ -12,6 +12,25 @@ The [JSON backlog](../examples/agentfactory-cloud-backlog.json) is the source of
 
 Core owns shared orchestration contracts and optional open-source game packs. Cloud owns the consumer product and accepts the integration. An AF-CLD task does not authorize a duplicate Core implementation. The existing [42 AF-GC requirements](https://github.com/HappyMiha/AgentFactory/blob/main/docs/core-cloud-backlog.md) stay upstream.
 
+## Recording what was produced
+
+A task may carry `evidence` entries in the JSON backlog: up to twenty, each with
+a `kind` (`code`, `test`, `document`, `run`, `review` or `deployment`), a
+`reference`, whoever recorded it, and an optional short note. Unknown fields and
+invented kinds are refused rather than ignored, and one task cannot record the
+same reference twice.
+
+Evidence says where to look. It is not a verdict, and it does not satisfy a
+release gate on its own — the gate rules in [evidence levels](evidence-gates.md)
+decide that, against an exact version.
+
+**A task marked `status:accepted` must record at least one entry.**
+`scripts/validate_backlog.py` refuses a manifest that declares acceptance with
+nothing recorded, so a label cannot assert delivered work that nobody can point
+at. The M0 contract tasks record the contracts, documents and checks that exist
+in this repository today; their status stays proposed, because recording where
+the work is and accepting it are different acts.
+
 ## How to use this backlog
 
 Start with M0, then prove the Godot journey in M1. Compare stage readiness before priority: P0 blocks its stage; P1 is important; P2 is later work. All required release tasks must pass, whatever their priority. S is up to 2, M up to 5, and L up to 10 engineer-days as rough estimates. Split L work before implementation. These sizes are not delivery dates.
