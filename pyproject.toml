@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Lokiravia by Lokvetia — local game idea and first-playable planning workspace"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["agent-factory-orchestrator[web] @ git+https://github.com/HappyMiha/Lokvetia-Core.git@000196a7a6558e9555a8e07accb1088cc141bdb0"]
+dependencies = ["agent-factory-orchestrator[web] @ git+https://github.com/HappyMiha/Lokvetia-Core.git@45379e1262e45c90d240ee0a747fe8b4548f8366"]
 
 [project.scripts]
 lokiravia = "agentfactory_cloud.brief_web:main"
