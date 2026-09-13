@@ -130,7 +130,11 @@ def create_app(folder: Path, *, model=None):
     def session(request: Request):
         principal = request.state.local_principal
         return {'authenticated': principal is not None, 'actor': principal.actor if principal else None,
+                'workspace_access': bool(principal and principal.role != 'account_user'),
                 'authentication_required': bool(request.state.local_policy.token)}
+
+    from agent_factory.desktop_downloads import install_download_routes
+    install_download_routes(app)
 
     @app.get('/first-playable')
     def scope_page():
