@@ -179,6 +179,12 @@
       "translation": "docs/evolution/vision.en.md",
       "source_sha256": "dec331e5c3202df3d8cc216e2c9c98cbf0a8fc783f58cc88fe35e10cb3072bcb",
       "translation_sha256": "90c217936fb79ef7d0c454ee875d80fc8148cc21b4d4cad4db7fe0571f550dc3"
+    },
+    {
+      "source": "docs/local-studio.uk.md",
+      "translation": "docs/local-studio.en.md",
+      "source_sha256": "b3bd8aca7cf756feab9c7db5eaf2cd3bc6b33d9dbfd3712776efca0a824b38a7",
+      "translation_sha256": "1065d6f11e8994f3417548196cd4325d2995b86216e0faea8b9d9a03273abdf7"
     }
   ],
   "canonical_sources": [

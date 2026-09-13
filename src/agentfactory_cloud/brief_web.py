@@ -19,6 +19,7 @@ from .game_briefs import BriefConflict, BriefStore, FIELDS, LocalBriefModel
 from .scope_plans import ScopePlans, LABELS, ENGINES, TARGETS
 from .game_team_web import install_routes as install_team_routes
 from .connection_guidance_web import install_routes as install_guidance_routes
+from .studio_bridge import install_routes as install_studio_routes
 
 
 class Command(BaseModel):
@@ -96,6 +97,7 @@ def create_app(folder: Path, *, model=None):
     app.mount('/static', StaticFiles(directory=static), name='static')
     install_team_routes(app, store)
     install_guidance_routes(app, folder)
+    install_studio_routes(app, store)
 
     def actor(request):
         return request.state.local_principal.actor
