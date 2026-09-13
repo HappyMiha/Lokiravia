@@ -19,6 +19,7 @@ from .game_briefs import BriefConflict, BriefStore, FIELDS, LocalBriefModel
 from .scope_plans import ScopePlans, LABELS, ENGINES, TARGETS
 from .game_team_web import install_routes as install_team_routes
 from .connection_guidance_web import install_routes as install_guidance_routes
+from .studio_bridge import install_routes as install_studio_routes
 
 
 class Command(BaseModel):
@@ -96,6 +97,7 @@ def create_app(folder: Path, *, model=None):
     app.mount('/static', StaticFiles(directory=static), name='static')
     install_team_routes(app, store)
     install_guidance_routes(app, folder)
+    install_studio_routes(app, store)
 
     def actor(request):
         return request.state.local_principal.actor
@@ -128,7 +130,11 @@ def create_app(folder: Path, *, model=None):
     def session(request: Request):
         principal = request.state.local_principal
         return {'authenticated': principal is not None, 'actor': principal.actor if principal else None,
+                'workspace_access': bool(principal and principal.role != 'account_user'),
                 'authentication_required': bool(request.state.local_policy.token)}
+
+    from agent_factory.desktop_downloads import install_download_routes
+    install_download_routes(app)
 
     @app.get('/first-playable')
     def scope_page():

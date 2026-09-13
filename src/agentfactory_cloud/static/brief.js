@@ -31,6 +31,7 @@ async function list(){
  $('workspace').hidden=false;$('login').hidden=true;$('logout').hidden=!config.authentication_required;
 }
 function show(brief){
+ $('open-studio').hidden=true;$('open-studio').removeAttribute('href');
  current=brief;highest=Math.max(highest,brief.revision);answers={};dirty=false;
  $('intake').hidden=true;$('editor').hidden=false;$('source').textContent=brief.original_text;
  $('version').textContent=`Version ${brief.revision}`;
@@ -64,3 +65,17 @@ $('logout').onclick=()=>leaving(()=>run(async()=>{await api('/auth/logout',{});c
 run(async()=>{await list();if(location.hash)await load(location.hash.slice(1));});
 
 $('plan-first').onclick=()=>leaving(()=>{location.href='/first-playable#'+encodeURIComponent(current.id);});
+
+api('/api/studio/connection').then(connection=>{
+ $('studio-handoff').hidden=!connection.configured;
+}).catch(()=>{$('studio-handoff').hidden=true;});
+$('start-studio').onclick=()=>{
+ if(dirty){status('Save your changes before starting the studio.');return;}
+ run(async()=>{
+  const result=await api('/api/briefs/'+encodeURIComponent(current.id)+'/studio',{
+   expected_revision:current.revision,confirmed:true,
+  });
+  const link=$('open-studio');link.href=result.url;link.hidden=false;
+  status('Local planning is queued. Open studio progress to follow it.');
+ });
+};
