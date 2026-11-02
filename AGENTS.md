@@ -18,5 +18,9 @@ integration here. Read [CONTRIBUTING.md](CONTRIBUTING.md) before making changes.
 - Keep credentials, private briefs, supplied books, extraction caches, and other
   private source material out of Git. Preserve the Ukrainian documentation and
   follow the documented bilingual publication policy.
+- When work is split across machines, treat Git as the only durable shared
+  context: follow [docs/multi-machine-context.md](docs/multi-machine-context.md)
+  and record each handoff in [docs/machine-state.md](docs/machine-state.md).
+  Machine roles are an operating convention and change no contribution rule.
 - Review the final diff before publishing. Do not overwrite unrelated history or
   force-push without explicit authorization.
