@@ -185,6 +185,18 @@
       "translation": "docs/local-studio.en.md",
       "source_sha256": "b3bd8aca7cf756feab9c7db5eaf2cd3bc6b33d9dbfd3712776efca0a824b38a7",
       "translation_sha256": "1065d6f11e8994f3417548196cd4325d2995b86216e0faea8b9d9a03273abdf7"
+    },
+    {
+      "source": "docs/multi-machine-context.uk.md",
+      "translation": "docs/multi-machine-context.en.md",
+      "source_sha256": "cfcaf445cf1eec31411e953377afd211e4ce7ae1e40686ca87c65761b0d3bd8a",
+      "translation_sha256": "87361568541beff100b0ebabf2e927ca6f48d45941c61a398b8999ab1f67f7bb"
+    },
+    {
+      "source": "docs/machine-state.uk.md",
+      "translation": "docs/machine-state.en.md",
+      "source_sha256": "5c77677db00418f1187de42c1c6361531be5ad4e23e9df0adafd9737a3e63e4e",
+      "translation_sha256": "34253c1b187f310a93dd27dae7953a5c6868b8d64b0a7df236c902bb5c724f3d"
     }
   ],
   "canonical_sources": [
