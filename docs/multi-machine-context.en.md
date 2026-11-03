@@ -1,5 +1,16 @@
 # Multi-machine context
 
+<!-- translation-metadata:start -->
+<details>
+<summary>Translation source and currency</summary>
+
+Translation source: [multi-machine-context.uk.md](multi-machine-context.uk.md). Source SHA-256 (UTF-8/LF): `cfcaf445cf1eec31411e953377afd211e4ce7ae1e40686ca87c65761b0d3bd8a`.
+
+</details>
+<!-- translation-metadata:end -->
+
+[Українська](multi-machine-context.uk.md).
+
 Owner operating note for work split across more than one computer. It describes
 how shared context is carried between machines and how a handoff is recorded.
 
@@ -32,17 +43,17 @@ it grants no permission that the repository does not already grant.
   reserved so that handoffs have a stable name before one does.
 
 One machine may hold both roles. Record roles in
-[machine-state.md](machine-state.md) rather than in branch names.
+[machine-state.en.md](machine-state.en.md) rather than in branch names.
 
 ## What crosses machines
 
 Carried in Git:
 
-- decisions, scope and backlog changes ([docs/evolution](evolution/README.md),
+- decisions, scope and backlog changes ([docs/evolution](evolution/README.en.md),
   [docs/backlog.md](backlog.md));
 - contracts and operating notes, including this file;
-- [machine-state.md](machine-state.md): which machine did what, and up to which
-  commit.
+- [machine-state.en.md](machine-state.en.md): which machine did what, and up to
+  which commit.
 
 Never carried in Git, restating [AGENTS.md](../AGENTS.md) so that a handoff does
 not quietly break it:
@@ -63,8 +74,8 @@ route and record only that it was moved.
    and a handoff before merge names the branch.
 2. **Pull before acting on a handoff.** Start from the recorded commit, not from
    whatever the checkout happened to hold.
-3. **Record the handoff** in [machine-state.md](machine-state.md) and commit that
-   entry together with the work it describes.
+3. **Record the handoff** in [machine-state.en.md](machine-state.en.md) and commit
+   that entry together with the work it describes.
 4. **Name the commit, not the conversation.** A handoff that points at a chat is
    unusable from the other machine.
 5. **One writer per file set at a time.** Two machines editing the same files
@@ -80,7 +91,7 @@ route and record only that it was moved.
 ## When the machines disagree
 
 Resolve against the Ukrainian originals and the canonical manifests, as
-[docs/evolution/language-policy.md](evolution/language-policy.md) requires, then
-synchronise the correction. Where both machines changed the same files, keep the
-pushed history and redo the losing side's work on top of it; do not overwrite
+[docs/evolution/language-policy.en.md](evolution/language-policy.en.md) requires,
+then synchronise the correction. Where both machines changed the same files, keep
+the pushed history and redo the losing side's work on top of it; do not overwrite
 unrelated history or force-push without explicit authorization.
